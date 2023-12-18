@@ -7,7 +7,7 @@ const NavList = ({ href, children }) => {
       <Link
         to={href}
         className={
-          'block py-2 px-3 text-black hover:text-blue-700 bg-blue-700 rounded md:bg-transparent  md:p-0 md:dark:text-blue-500'
+          'block py-2 px-3 text-black hover:text-blue-700 bg-blue-700 rounded md:bg-transparent  md:p-0 md:dark:text-blue-500 font-family:Satoshi-Bold,Helvetica '
         }
         aria-current="page"
       >

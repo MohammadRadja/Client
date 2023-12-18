@@ -5,7 +5,7 @@ const Button = ({ children, href }) => {
   return (
     <Link
       to={href}
-      className="text-white block me-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      className="fixed w-[111px] h-[41px] top-0 left-0 rounded-[14.51px] [background:linear-gradient(180deg,rgb(58,142,246)_0%,rgb(110.75,57.8,249.75)_100%)]"
     >
       {children}
     </Link>
