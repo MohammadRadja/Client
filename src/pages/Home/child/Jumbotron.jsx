@@ -2,11 +2,14 @@ const Jumbotron = () => {
   return (
     <section className="grid grid-cols-2 items-center my-20">
       <div>
-        <h2 className="text-7xl font-bold">
-          Mari Melakukan Kegiatan Positif <br /> 
-        </h2>
-        <p className="text-3xl font-light mt-5">Mau kemana hari ini?</p>
-        <input type="text" placeholder="Search" className="top-0 left-0 bg-[#f8f6f6] rounded-[50px] shadow-[2px_6px_4px_#908b8b66]" />
+        <div className="w-[300px] h-[72px] bg-white bg-opacity-25 rounded-[40px] border border-zinc-400 text-neutral-600 text-[32px] font-bold font-['Satoshi']">
+        Health Matters
+        </div>
+         <div className="w-[823px]">
+          <span className="text-blue-600 text-[90px] font-bold leading-[105px]">One Step Solution <br/></span>
+          <span className="text-black text-[90px] font-bold leading-[105px]">for all your dietary needs.</span>
+        </div>
+        <div className="w-[762px] text-zinc-500 text-[32px] font-bold font-['Satoshi'] leading-[43px]">Using your BMI index we calculate whether the dish is suitable for you.</div>
       </div>
       <div>
         <img src="/images/jumbotron.png" alt="jumbotron" />

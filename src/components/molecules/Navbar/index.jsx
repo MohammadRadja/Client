@@ -6,10 +6,10 @@ const Navbar = () => {
   const user = useAuthUser();
   const signOut = useSignOut();
   return (
-    <div className="flex justify-between px-20 py-5  items-center">
+    <div className="flex justify-between px-20 py-5 shadow items-center">
       <Link to={'/'} className="flex items-center">
         <img src="/images/logo.png" alt="logo" className='w-10 h-10 mr-2' />
-        <h1 className="font-black text-transparent text-2xl top-0 left-0 [background:linear-gradient(180deg,rgb(58,142,246)_0%,rgb(110.75,57.8,249.75)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Satoshi-Black',Helvetica]">
+        <h1 className="font-black text-transparent text-2xl top-0 left-0 text-blue-500 font-['Brush-Script'] fa fa-home">
           HealthyMe</h1>
       </Link>
       <div>
@@ -38,7 +38,7 @@ const Navbar = () => {
             </>
           )}
           <button
-               className=" w-[100px]  h-[46px] top-0 left-0 [font-family:'Satoshi-Black',Helvetica] text-white bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-black rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+               className=" w-[100px]  h-[40px] top-0 left-0 [font-family:Helvetica] text-white bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-black rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                >
               Log In
           </button>
