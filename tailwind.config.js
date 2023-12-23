@@ -6,8 +6,15 @@ export default {
     './node_modules/flowbite/**/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#1B74E4",
+      },
+    },
   },
   // eslint-disable-next-line no-undef
-  plugins: [require('flowbite/plugin')],
+  plugins: [
+    require('flowbite/plugin'),
+    require('tailwind-scrollbar-hide')
+  ],
 };

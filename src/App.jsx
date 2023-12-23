@@ -1,17 +1,31 @@
-import { AuthProvider } from 'react-auth-kit';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { AuthProvider, useIsAuthenticated } from 'react-auth-kit';
+import { RouterProvider, createBrowserRouter, useRoutes, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import BlogDetail from './pages/BlogDetail';
-import Blog from './pages/Blog';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { Toaster } from 'react-hot-toast';
-import FormInput from './pages/Form';
-export default function App() {
+import LandingPage from './pages/LandingPage';
+import TimeManagement from './pages/TimeManagement';
+import DietPlan from './pages/DietPlan';
+import FinancialRecord from './pages/FinancialRecord';
+import Activity from './pages/Activity';
+
+const PrivateRoute = ({ element }) => {
+  const isAuth = useIsAuthenticated();
+
+  if (!isAuth()) {
+    // Redirect to the login page if not authenticated
+    return <Navigate to="/" replace />;
+  }
+
+  return element;
+};
+
+const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />,
+      element: <LandingPage />,
     },
     {
       path: '/login',
@@ -22,18 +36,27 @@ export default function App() {
       element: <Register />,
     },
     {
-      path: '/blog',
-      element: <Blog />,
+      path: '/home',
+      element: <PrivateRoute element={<Home />} />,
     },
     {
-      path: '/blog/:id',
-      element: <BlogDetail />,
+      path: '/timeManagement',
+      element: <PrivateRoute element={<TimeManagement />} />,
     },
     {
-      path: '/form',
-      element: <FormInput />,
+      path: '/dietPlan',
+      element: <PrivateRoute element={<DietPlan />} />,
+    },
+    {
+      path: '/financialRecord',
+      element: <PrivateRoute element={<FinancialRecord />} />,
+    },
+    {
+      path: '/activity',
+      element: <PrivateRoute element={<Activity />} />,
     },
   ]);
+
   return (
     <>
       <AuthProvider
@@ -47,4 +70,6 @@ export default function App() {
       </AuthProvider>
     </>
   );
-}
+};
+
+export default App;
