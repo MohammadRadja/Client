@@ -15,7 +15,7 @@ const Home = () => {
             <div className="text-2xl font-semibold">Recent Activity</div>
             <button className=" text-2xl flex flex-wrap gap-4 justify-center">
               <AiOutlinePlus />
-            </button>
+            </button> 
           </div>
           <div className="relative flex gap-4 py-6 overflow-x-auto">
             <ActivityCard />
