@@ -14,6 +14,7 @@ const Activity = () => {
             <ActivityCard />
             <ActivityCard />
           </div>
+          
         </div>
       </div>
     </Layout>
