@@ -8,11 +8,13 @@ import { useSignOut } from "react-auth-kit";
 const Navbar = () => {
   const signOut = useSignOut();
   return (
-    <div className="py-2 px-4 bg-white shadow-md flex justify-between items-center top-0 sticky z-50">
-      <div className="flex items-center gap-2">
+    
+    <div className="py-2 px-4 bg-white shadow-md flex justify-between top-0 sticky z-50">
         <BsFacebook className="text-primary text-[40px]" />
+      {/* <div className="flex items-center gap-2"> */}
 
-        <div className="relative hidden sm:block">
+        {/* Button Search */}
+        {/* <div className="relative hidden sm:block">
           <AiOutlineSearch className="absolute text-[20px] top-[10px] left-[10px] text-gray-500" />
           <input
             className="bg-[#F0F2F5] p-2 rounded-full pl-9 outline-none placeholder:text-gray-500"
@@ -20,8 +22,9 @@ const Navbar = () => {
             placeholder="Search Facebook"
           />
         </div>
-      </div>
+      </div> */}
 
+      {/* PageItem */}
       <div className="hidden lg:flex items-center gap-[100px] text-[30px] text-gray-500">
         <div className="relative">
           <AiFillHome className="text-primary" />
@@ -50,15 +53,15 @@ const Navbar = () => {
           <IoNotifications />
         </div>
         <button
-                onClick={() => {
-                  signOut();
-                }}
-              >
-                Logout
-              </button> 
+          onClick={() => {
+            signOut();
+          }}
+        >
+          Logout
+        </button>
         <img
           className="w-[44px] cursor-pointer rounded-full"
-        //   src={session?.user?.image}
+          //   src={session?.user?.image}
           alt="dp"
           // onClick={signOut}
         />
