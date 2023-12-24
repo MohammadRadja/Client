@@ -1,17 +1,17 @@
     import React from "react";
     import LeftSidebarLink from "../../atoms/LeftBarList";
-    import { useSession } from "next-auth/react";
+    // import { useSession } from "next-auth/react";
     import { BsChevronDown } from "react-icons/bs";
 
     const LeftSidebar = () => {
-      const { data: session } = useSession();
+      // const { data: session } = useSession();
 
     return (
         <div className="px-4 fixed mt-5 hidden lg:block">
         <div className="flex flex-col gap-2">
             <LeftSidebarLink
-              image={session?.user?.image}
-              text={session?.user?.name}
+              // image={session?.user?.image}
+              // text={session?.user?.name}
             />
             <LeftSidebarLink image="../images/friends.png" text="Friends" />
             <LeftSidebarLink image="../images/group.png" text="Groups" />
