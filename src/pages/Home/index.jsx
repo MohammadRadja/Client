@@ -17,12 +17,14 @@ const Home = () => {
               <AiOutlinePlus />
             </button>
           </div>
-
-          <div className="flex flex-wrap gap-4 justify-center">
-            <ActivityCard />
-            <ActivityCard />
-            <ActivityCard />
+          <div className="relative w-full flex gap-4 py-6 overflow-x-auto">
+            <ActivityCard/>
+            <ActivityCard/>
+            <ActivityCard/>
+            <ActivityCard/>
+            <ActivityCard/>
           </div>
+        
         </div>
       </div>
       <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
