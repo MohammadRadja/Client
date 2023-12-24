@@ -1,15 +1,23 @@
 import React from "react";
 import { BsFacebook, BsMessenger } from "react-icons/bs";
 import { AiOutlineSearch, AiFillHome } from "react-icons/ai";
+import { IoMdLogOut } from "react-icons/io";
 import { IoStorefrontOutline, IoNotifications } from "react-icons/io5";
 import { CgMenuGridO } from "react-icons/cg";
-import { useSignOut } from "react-auth-kit";
+import { useAuthUser, useSignOut } from "react-auth-kit";
+import { Link } from 'react-router-dom';
+
+
 
 const Navbar = () => {
+  const user = useAuthUser();
   const signOut = useSignOut();
   return (
-    <div className="py-2 px-4 bg-white shadow-md flex justify-between top-0 sticky z-50">
-      <BsFacebook className="text-primary text-[40px]" />
+    <div className="py-2 px-4 bg-white shadow flex justify-between top-0 sticky z-50">
+       <Link to={'/home'} className="flex items-center">
+        <img src="/images/logo.png" alt="logo" className='w-10 h-10' />
+        </Link>
+      {/* <BsFacebook className="text-primary text-[40px]" /> */}
       {/* <div className="flex items-center gap-2"> */}
 
       {/* Button Search */}
@@ -52,18 +60,22 @@ const Navbar = () => {
           <IoNotifications />
         </div>
         <button
+          className="icon_wrapper text-[20px]"
           onClick={() => {
             signOut();
           }}
         >
-          Logout
+          <IoMdLogOut />
         </button>
-        <img
+        <p>
+            Halo!! <span className="font-bold">{user().name}</span>
+        </p>
+        {/* <img
           className="w-[44px] cursor-pointer rounded-full"
           //   src={session?.user?.image}
           alt="dp"
           // onClick={signOut}
-        />
+        /> */}
       </div>
     </div>
   );
