@@ -5,20 +5,37 @@ import { CgMenuGridO } from "react-icons/cg";
 import { BiHomeSmile, BiListCheck, BiTime, BiMoney} from "react-icons/bi";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { IoMdLogOut } from "react-icons/io";
-import { useAuthUser, useSignOut } from "react-auth-kit";
+import { useSignOut } from "react-auth-kit";
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect} from "react";
 
 const Navbar = () => {
-  const user = useAuthUser();
   const signOut = useSignOut();
 
-  //Navigasi Icon
+  //HamburgerMenu
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State untuk mengontrol tampilan menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Mengubah status tampilan menu saat tombol hamburger diklik
+  };
+  
+
+  //Navigasi Icon Untuk Navbar dan Hamburger
   const [selectedIcon, setSelectedIcon] = useState('home');
   const handleIconClick = (IconName) => {
     setSelectedIcon(IconName);
   };
+
+  //Navigasi Icon dan Hover untuk Navbar dan Hamburger
+  const [isHovered, setIsHovered] = useState(false);
+  const handleLinkClick = () => {
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
  
+  //useEffect untuk icon 
   const location = useLocation();
   useEffect(() => {
     // Update selectedIcon berdasarkan path yang aktif (location.pathname)
@@ -43,6 +60,76 @@ const Navbar = () => {
        <Link to='/home' className="flex items-center">
         <img src="/images/logo.png" alt="logo" className='w-10 h-10' />
         </Link>
+
+
+      {/* Hamburger Menu */}
+      <button onClick={toggleMenu} className="lg:hidden ml-auto text-3xl focus:outline-none">
+        ☰
+      </button>
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-full right-0 bg-white shadow mt-2 w-48 rounded-lg overflow-hidden">
+          <div className="flex flex-col py-2">
+            <Link
+              to="/home"
+              onClick={() => {
+                toggleMenu(); // Tutup menu saat tautan diklik
+                handleIconClick('home'); // Set selectedIcon ke 'home'
+              }}
+              onMouseEnter={() => setIsHovered('home')}
+              onMouseLeave={() => setIsHovered('')}
+              className={`block px-4 py-2 transition duration-300 cursor pointer
+              ${isHovered === 'home' || selectedIcon === 'home' ? 'bg-gray-300' : ''}`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/activity"
+              onClick={() => {
+                toggleMenu(); // Tutup menu saat tautan diklik
+                handleIconClick('activity'); // Set selectedIcon ke 'home'
+              }}
+              onMouseEnter={() => setIsHovered('activity')}
+              onMouseLeave={() => setIsHovered('')}
+              className={`block px-4 py-2 transition duration-300 cursor pointer
+              ${isHovered === 'activity' || selectedIcon === 'activity' ? 'bg-gray-300' : ''}`}
+              >
+              Activity
+            </Link>
+            <Link
+              to="/timeManagement"
+              onClick={toggleMenu}
+              onMouseEnter={() => setIsHovered('timeManagement')}
+              onMouseLeave={() => setIsHovered('')}
+              className={`block px-4 py-2 transition duration-300 cursor pointer
+              ${isHovered === 'timeManagement' || selectedIcon === 'timeManagement' ? 'bg-gray-300' : ''}`}
+              >
+              Time Management
+            </Link>
+            <Link
+              to="/financialRecord"
+              onClick={toggleMenu}
+              onMouseEnter={() => setIsHovered('financialRecord')}
+              onMouseLeave={() => setIsHovered('')}
+              className={`block px-4 py-2 transition duration-300 cursor pointer
+              ${isHovered === 'financialRecord' || selectedIcon === 'financialRecord' ? 'bg-gray-300' : ''}`}
+              >
+              Financial Record
+            </Link>
+            <Link
+              to="/dietPlan"
+              onClick={toggleMenu}
+              onMouseEnter={() => setIsHovered('dietPlan')}
+              onMouseLeave={() => setIsHovered('')}
+              className={`block px-4 py-2 transition duration-300 cursor pointer
+              ${isHovered === 'dietPlan' || selectedIcon === 'dietPlan' ? 'bg-gray-300' : ''}`}
+              >
+              Diet Plan
+            </Link>
+          </div>
+        </div>
+      )}
+      {/* Hamburger Menu End */}
+
 
       {/* Navbar Center */}
       <div className="hidden lg:flex items-center justify-center gap-[50px] text-[30px] text-gray-500">
@@ -82,38 +169,54 @@ const Navbar = () => {
       </div>
       {/* Navbar Center End */}
 
+
       {/* Navbar Right */}
-      <div className="flex items-center gap-4">
-        <div className="icon_wrapper text-[28px]">
+      <div className="hidden lg:flex items-center gap-[20px] text-[30px]">
+      <Link to='/menu'>
+        <div
+          onClick={() => handleLinkClick('menu')}
+          onMouseEnter={() => setIsHovered('menu')}
+          onMouseLeave={handleMouseLeave}
+          className={`icon_wrapper text-[20px] cursor-pointer ${isHovered === 'menu' ? 'text-blue-500' : ''}`}
+        >
           <CgMenuGridO />
         </div>
-
-        <div className="icon_wrapper text-[20px]">
+      </Link>
+      <Link to='/messenger'>
+        <div
+          onClick={() => handleLinkClick('messenger')}
+          onMouseEnter={() => setIsHovered('messenger')}
+          onMouseLeave={handleMouseLeave}
+          className={`icon_wrapper text-[20px] cursor-pointer ${isHovered === 'messenger' ? 'text-blue-500' : ''}`}
+        >
           <BsMessenger />
         </div>
-
-        <div className="icon_wrapper text-[20px]">
+      </Link>
+      <Link to='/notification'>
+        <div
+          onClick={() => handleLinkClick('notification')}
+          onMouseEnter={() => setIsHovered('notification')}
+          onMouseLeave={handleMouseLeave}
+          className={`icon_wrapper text-[20px] cursor-pointer ${isHovered === 'notification' ? 'text-blue-500' : ''}`}
+        >
           <IoNotifications />
         </div>
+      </Link>
+      <Link to='/signOut'>
         <button
-          className="icon_wrapper text-[20px]"
+          onMouseEnter={() => setIsHovered('signOut')}
+          onMouseLeave={handleMouseLeave}
+          className={`icon_wrapper text-[20px] cursor-pointer ${isHovered === 'signOut' ? 'text-blue-500' : ''}`}
           onClick={() => {
             signOut();
           }}
         >
           <IoMdLogOut />
         </button>
-        <p>
-            Halo!!,<span className="font-bold">{user().name}</span>
-        </p>
-        {/* <img
-          className="w-[44px] cursor-pointer rounded-full"
-          //   src={session?.user?.image}
-          alt="dp"
-          // onClick={signOut}
-        /> */}
+      </Link>
       </div>
         {/* Navbar Right End */}
+
 
     </div>
   );

@@ -1,10 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 
 const LeftSidebarLink = ({ icon, text, to }) => {
-  const [isHovered, setIsHovered] = useState(false);
 
-  //Navigasi Icon
+  LeftSidebarLink.propTypes = {
+    icon: PropTypes.element.isRequired,
+    text: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired,
+  };
+
+  //Navigasi Icon dan Hover
+  const [isHovered, setIsHovered] = useState(false);
   const handleLinkClick = () => {
     setIsHovered(true);
   };

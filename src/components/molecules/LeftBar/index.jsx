@@ -1,20 +1,20 @@
-    import React from "react";
     import { BiHomeSmile, BiListCheck, BiTime, BiMoney} from "react-icons/bi";
     import { GiWeightLiftingUp } from "react-icons/gi";
     import LeftSidebarLink from "../../atoms/LeftBarList";
     // import { useSession } from "next-auth/react";
     import { BsChevronDown } from "react-icons/bs";
+    import { useAuthUser } from "react-auth-kit";
 
     const LeftSidebar = () => {
+    const user = useAuthUser();
     //   const { data: session } = useSession();
 
     return (
         <div className="px-4 fixed mt-5 hidden lg:block">
         <div className="flex flex-col gap-2">
-            <LeftSidebarLink
-            //   image={session?.user?.image}
-            //   text={session?.user?.name}
-            />
+        <p>
+            Halooo!!,<span className="font-bold">{user().name}</span>
+        </p>
             <LeftSidebarLink icon={<BiHomeSmile />} text="Home" to='/home' />
             <LeftSidebarLink icon={<BiListCheck />} text="Activity" to='/activity' />
             <LeftSidebarLink icon={<BiTime />} text="Time Management" to='/timeManagement' />
