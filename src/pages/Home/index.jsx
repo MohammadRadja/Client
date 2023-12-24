@@ -31,24 +31,24 @@ const Home = () => {
             Recent Time Management
           </div>
           <div className="flex flex-wrap gap-4 justify-center">
-            <div class="card md:flex max-w-lg">
-              <div class="w-20 h-20 mx-auto mb-6 md:mr-6 flex-shrink-0">
+            <div className="card md:flex max-w-lg">
+              <div className="w-20 h-20 mx-auto mb-6 md:mr-6 flex-shrink-0">
                 <img
-                  class="object-cover rounded-full"
+                  className="object-cover rounded-full"
                   src="/assets/profile_image.png"
                 />
               </div>
-              <div class="flex-grow text-center md:text-left">
-                <p class="support">Senior Researcher</p>
-                <h3 class="text-xl heading">Dr. Katya Hattenagh</h3>
-                <p class="mt-2 mb-3">
+              <div className="flex-grow text-center md:text-left">
+                <p className="support">Senior Researcher</p>
+                <h3 className="text-xl heading">Dr. Katya Hattenagh</h3>
+                <p className="mt-2 mb-3">
                   Katya studies the intersection of machine learning and
                   differential topology.
                 </p>
                 <div>
-                  <span class="chip ~neutral mb-1">Discrete Math</span>{" "}
-                  <span class="chip ~neutral mb-1">Topology</span>{" "}
-                  <span class="chip ~neutral mb-1">Neural Nets</span>
+                  <span className="chip ~neutral mb-1">Discrete Math</span>{" "}
+                  <span className="chip ~neutral mb-1">Topology</span>{" "}
+                  <span className="chip ~neutral mb-1">Neural Nets</span>
                 </div>
               </div>
             </div>
