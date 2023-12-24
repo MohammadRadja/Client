@@ -8,13 +8,12 @@ import { useSignOut } from "react-auth-kit";
 const Navbar = () => {
   const signOut = useSignOut();
   return (
-    
     <div className="py-2 px-4 bg-white shadow-md flex justify-between top-0 sticky z-50">
-        <BsFacebook className="text-primary text-[40px]" />
+      <BsFacebook className="text-primary text-[40px]" />
       {/* <div className="flex items-center gap-2"> */}
 
-        {/* Button Search */}
-        {/* <div className="relative hidden sm:block">
+      {/* Button Search */}
+      {/* <div className="relative hidden sm:block">
           <AiOutlineSearch className="absolute text-[20px] top-[10px] left-[10px] text-gray-500" />
           <input
             className="bg-[#F0F2F5] p-2 rounded-full pl-9 outline-none placeholder:text-gray-500"
