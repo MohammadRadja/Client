@@ -32,7 +32,7 @@ const Navbar = () => {
       </div> */}
 
       {/* PageItem */}
-      <div className="hidden lg:flex items-center gap-[100px] text-[30px] text-gray-500">
+      <div className="hidden lg:flex items-center justify-center gap-[50px] text-[30px] text-gray-500">
         <div className="relative">
           <AiFillHome className="text-primary" />
           <div className="absolute bg-primary -left-[40px] h-[3px] w-[110px] -bottom-[16px]"></div>
@@ -68,7 +68,7 @@ const Navbar = () => {
           <IoMdLogOut />
         </button>
         <p>
-            Halo!! <span className="font-bold">{user().name}</span>
+            Halo!!,<span className="font-bold">{user().name}</span>
         </p>
         {/* <img
           className="w-[44px] cursor-pointer rounded-full"
