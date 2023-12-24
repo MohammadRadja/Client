@@ -9,8 +9,8 @@ const Jumbotron = () => {
           <span className="text-blue-600 text-[90px] font-bold leading-[105px]">One Step Solution <br/></span>
           <span className="text-black text-[90px] font-bold leading-[105px]">for all your dietary needs.</span>
         </div>
-        <div className="w-[762px] text-zinc-500 text-[32px] font-bold font-['Satoshi'] leading-[43px]">Using your BMI index we calculate whether the dish is suitable for you.</div>
-        <div className="text-blue-500 text-[34px] font-black font-['Satoshi'] tracking-[7.82px]">FEATURES WE PROVIDE</div>
+        <div className="w-[762px] text-zinc-500 text-[32px] font-bold font-['Helvetica'] leading-[43px]">Using your BMI index we calculate whether the dish is suitable for you.</div>
+        <div className="text-blue-500 text-[34px] font-black font-['Helvetica'] tracking-[7.82px]">FEATURES WE PROVIDE</div>
       </div>
       <div>
         <img src="/images/jumbotron.png" alt="jumbotron" />
