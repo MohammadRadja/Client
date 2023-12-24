@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import NavList from '../../atoms/NavList';
 import { useIsAuthenticated, useAuthUser, useSignOut } from 'react-auth-kit';
-const Navbar = () => {
+const Navbara = () => {
   const isAuthenticated = useIsAuthenticated();
   const user = useAuthUser();
   const signOut = useSignOut();
@@ -48,4 +48,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbara;

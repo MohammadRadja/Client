@@ -31,7 +31,7 @@ const Login = () => {
           })
           .then(() => {
             setTimeout(() => {
-              window.location.href = '/';
+              window.location.href = '/home';
             }, 500);
           });
       } catch (error) {

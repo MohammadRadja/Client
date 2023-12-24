@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Card from '../../../Components/molecules/Card';
+import Card from '../../../components/molecules/Card';
 import { instance } from '../../../utils/instance';
 
 const NewsList = () => {
