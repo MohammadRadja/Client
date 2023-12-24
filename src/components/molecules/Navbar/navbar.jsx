@@ -84,7 +84,7 @@ const Navbar = () => {
 
       {/* Navbar Right */}
       <div className="flex items-center gap-4">
-        <div className="icon_wrapper text-[28px]">
+        {/* <div className="icon_wrapper text-[28px]">
           <CgMenuGridO />
         </div>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
 
         <div className="icon_wrapper text-[20px]">
           <IoNotifications />
-        </div>
+        </div> */}
         <button
           className="icon_wrapper text-[20px]"
           onClick={() => {
