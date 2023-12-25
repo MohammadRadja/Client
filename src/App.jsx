@@ -9,6 +9,7 @@ import TimeManagement from './pages/TimeManagement';
 import DietPlan from './pages/DietPlan';
 import FinancialRecord from './pages/FinancialRecord';
 import Activity from './pages/Activity';
+import ActivityDetail from './pages/ActivityDetail';
 
 const PrivateRoute = ({ element }) => {
   const isAuth = useIsAuthenticated();
@@ -54,6 +55,10 @@ const App = () => {
     {
       path: '/activity',
       element: <PrivateRoute element={<Activity />} />,
+    },
+    {
+      path: '/activity/:id',
+      element: <PrivateRoute element={<ActivityDetail />} />,
     },
   ]);
 
