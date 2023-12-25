@@ -10,6 +10,7 @@ import DietPlan from './pages/DietPlan';
 import FinancialRecord from './pages/FinancialRecord';
 import Activity from './pages/Activity';
 import ActivityDetail from './pages/ActivityDetail';
+import TimeManagementDetail from './pages/TimeManagementDetail';
 
 const PrivateRoute = ({ element }) => {
   const isAuth = useIsAuthenticated();
@@ -36,14 +37,21 @@ const App = () => {
       path: '/register',
       element: <Register />,
     },
+
     {
       path: '/home',
       element: <PrivateRoute element={<Home />} />,
     },
+
     {
       path: '/timeManagement',
       element: <PrivateRoute element={<TimeManagement />} />,
     },
+    {
+    path: '/timeManagement/:id',
+    element: <PrivateRoute element={<TimeManagementDetail />} />,
+    },
+
     {
       path: '/dietPlan',
       element: <PrivateRoute element={<DietPlan />} />,
@@ -52,6 +60,7 @@ const App = () => {
       path: '/financialRecord',
       element: <PrivateRoute element={<FinancialRecord />} />,
     },
+
     {
       path: '/activity',
       element: <PrivateRoute element={<Activity />} />,

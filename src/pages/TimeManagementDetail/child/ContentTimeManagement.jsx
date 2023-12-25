@@ -8,7 +8,8 @@ import toast from "react-hot-toast";
 import { useFormik } from "formik";
 import { RiEditBoxFill } from "react-icons/ri";
 import { BsTrash2Fill } from "react-icons/bs";
-const ContentActivity = ({ data }) => {
+import { data } from "autoprefixer";
+const ContentTimeManagement = ({ data }) => {
   const [deleteModal, setDeleteModal] = useState(false);
   const [updateModal, setUpdateModal] = useState(false);
   const checkAuth = useIsAuthenticated();
@@ -19,7 +20,7 @@ const ContentActivity = ({ data }) => {
   const deletePost = async () => {
     try {
       await instance
-        .delete(`activity/${params.id}`, {
+        .delete(`timeManagement/${params.id}`, {
           headers: {
             Authorization: token(),
           },
@@ -29,7 +30,7 @@ const ContentActivity = ({ data }) => {
             icon: "👏",
           });
           setTimeout(() => {
-            window.location.href = "/activity";
+            window.location.href = "/timeManagement";
           }, 500);
         });
     } catch (error) {
@@ -44,14 +45,15 @@ const ContentActivity = ({ data }) => {
   // UPDATE MODAL
   const formik = useFormik({
     initialValues: {
-      title: data.title,
-      goal: "",
+      task: data.task,
+      deadline: "",
+      priority: "",
     },
     onSubmit: async (values, action) => {
       action.setSubmitting(true);
       try {
         await instance
-          .put(`activity/${params.id}`, values, {
+          .put(`timeManagement/${params.id}`, values, {
             headers: {
               Authorization: token(),
             },
@@ -77,43 +79,52 @@ const ContentActivity = ({ data }) => {
 
   useEffect(() => {
     formik.setValues({
-      title: data.title,
-      goal: data.goal,
-      date: data.createdAt,
+      task: data.task,
+      deadline: data.deadline,
+      priority: data.priority,
     });
   }, [data]);
   return (
-    <div className="max-w-2xl px-6 py-4 mx-auto space-y-8 dark:bg-gray-800 dark:text-gray-50">
-      <div className="w-full mx-auto space-y-4">
-        <h1 className="text-4xl font-bold">{data.title}</h1>
-        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-          <span>Posted on</span>
-          <time className="ml-2" dateTime="2021-02-12 15:34:18-0200">
-            {data.createdAt || "Data Tanggal Belum Tampil"}
-          </time>
+    <div className="max-w-2xl px-6 py-4 mx-auto space-y-6">
+      <article className="space-y-8 text-gray-900">
+        <div className="space-y-6">
+          <h1 className="text-4xl font-bold md:tracki md:text-5xl">
+            {data.task}
+          </h1>
+          <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
+            <div className="flex items-center md:space-x-2">
+              <p className="text-l text-blue-600">
+                Daeadline • {data.deadline}
+              </p>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="px-3 py-1 rounded-sm hover:underline bg-blue-600 text-gray-50"
+              >
+                {data.priority}
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="text-lg leading-relaxed dark:text-gray-100">
-          <p>{data.goal}</p>
-        </div>
-        <div className="flex items-center space-x-4">
-          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
-            <RiEditBoxFill
-              className="w-5 h-5"
-              onClick={() => setUpdateModal(!updateModal)}
-            />
-          </button>
-          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500 text-white focus:outline-none">
-            <BsTrash2Fill
-              className="w-5 h-5"
-              onClick={() => setDeleteModal(!deleteModal)}
-            />
-          </button>
-        </div>
+      </article>
+      <div className="flex items-center space-x-4">
+        <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
+          <RiEditBoxFill
+            className="w-5 h-5"
+            onClick={() => setUpdateModal(!updateModal)}
+          />
+        </button>
+        <button className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500 text-white focus:outline-none">
+          <BsTrash2Fill
+            className="w-5 h-5"
+            onClick={() => setDeleteModal(!deleteModal)}
+          />
+        </button>
       </div>
-      {/* <div className="flex gap-3 justify-center"> */}
+
       {/* DELETE */}
       <Modal
-        title={`Delete Blog ${data.title}`}
+        title={`Delete Blog ${data.task}`}
         handleModal={() => setDeleteModal(!deleteModal)}
         isOpen={deleteModal}
       >
@@ -153,35 +164,52 @@ const ContentActivity = ({ data }) => {
                 htmlFor="title"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Title
+                Task
               </label>
               <input
                 onChange={formik.handleChange}
-                name="title"
-                value={formik.values.title}
+                value={formik.values.task}
                 type="text"
-                id="title"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Title"
+                name="task"
+                id="task"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Type product name"
                 required
               />
             </div>
             <div className="mb-5">
               <label
-                htmlFor="goal"
+                htmlFor="title"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Goal
+                Deadline
               </label>
-              <textarea
-                type="text"
-                id="goal"
+              <input
                 onChange={formik.handleChange}
-                name="goal"
-                rows="4"
-                value={formik.values.goal}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Goal"
+                value={formik.values.deadline}
+                type="date"
+                name="deadline"
+                id="deadline"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Select date"
+                required
+              />
+            </div>
+            <div className="mb-5">
+              <label
+                htmlFor="title"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Priority
+              </label>
+              <input
+                onChange={formik.handleChange}
+                value={formik.values.priority}
+                type="text"
+                name="priority"
+                id="priority"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Type product name"
                 required
               />
             </div>
@@ -205,18 +233,34 @@ const ContentActivity = ({ data }) => {
         </div>
       </Modal>
 
-      {/* </div>
-      <p className="font-bold">
-        Written by {data.author?.name}{" "}
-        <span className="ms-10 font-normal text-slate-400">Monday May 20</span>
-      </p>
-      <hr />
-      <p>{data.content}</p> */}
+      {/* <div>
+        <div className="space-y-2">
+          <h4 className="text-lg font-semibold">Related posts</h4>
+          <ul className="ml-4 space-y-1 list-disc">
+            <li>
+              <a rel="noopener noreferrer" href="#" className="hover:underline">
+                Nunc id magna mollis
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" href="#" className="hover:underline">
+                Duis molestie, neque eget pretium lobortis
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" href="#" className="hover:underline">
+                Mauris nec urna volutpat, aliquam lectus sit amet
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div> */}
     </div>
   );
 };
 
-ContentActivity.propTypes = {
+ContentTimeManagement.propTypes = {
   data: PropTypes.any,
 };
-export default ContentActivity;
+
+export default ContentTimeManagement;
