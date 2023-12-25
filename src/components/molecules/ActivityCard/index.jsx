@@ -28,7 +28,7 @@ const ActivityCard = ({ title, goal, id }) => {
 ActivityCard.propTypes = {
   title: PropTypes.string,
   goal: PropTypes.string,
-  id: PropTypes.string,
+  id: PropTypes.number,
 };
 
 export default ActivityCard;
