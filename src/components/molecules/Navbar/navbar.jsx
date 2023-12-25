@@ -210,7 +210,7 @@ const Navbar = () => {
           <IoNotifications />
         </div>
       </Link> */}
-      <Link to='/signOut'>
+      <Link to='/home'>
         <button
           onMouseEnter={() => setIsHovered('signOut')}
           onMouseLeave={handleMouseLeave}
