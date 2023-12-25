@@ -1,4 +1,3 @@
-import React from "react";
 
 const Jumbotron = () => {
   return (
@@ -13,10 +12,10 @@ const Jumbotron = () => {
             world use Flowbite to simplify their payment stack.
           </p>
           <a
-            href="#"
-            className="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center text-black rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            href="/login"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-blue-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2"
           >
-            Get started
+            Login
             <svg
               className="ml-2 -mr-1 w-5 h-5"
               fill="currentColor"
@@ -31,10 +30,10 @@ const Jumbotron = () => {
             </svg>
           </a>
           <a
-            href="#"
+            href="/register"
             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-blue-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
-            Speak to Sales
+            Register
           </a>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">

@@ -1,7 +1,7 @@
 // import React from "react";
-import { BsMessenger } from "react-icons/bs";
-import { IoNotifications } from "react-icons/io5";
-import { CgMenuGridO } from "react-icons/cg";
+// import { BsMessenger } from "react-icons/bs";
+// import { IoNotifications } from "react-icons/io5";
+// import { CgMenuGridO } from "react-icons/cg";
 import { BiHomeSmile, BiListCheck, BiTime, BiMoney} from "react-icons/bi";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { IoMdLogOut } from "react-icons/io";
@@ -58,7 +58,7 @@ const Navbar = () => {
   return (
     <div className="py-2 px-4 bg-white shadow flex justify-between top-0 sticky z-50">
        <Link to='/home' className="flex items-center">
-        <img src="/images/logo.png" alt="logo" className='w-10 h-10' />
+        <img src="/images/logo.png" alt="LifeSyncHub logo" className='w-10 h-10' />
         </Link>
 
 
@@ -73,7 +73,7 @@ const Navbar = () => {
               to="/home"
               onClick={() => {
                 toggleMenu(); // Tutup menu saat tautan diklik
-                handleIconClick('home'); // Set selectedIcon ke 'home'
+                handleLinkClick('home'); // Set selectedIcon ke 'home'
               }}
               onMouseEnter={() => setIsHovered('home')}
               onMouseLeave={() => setIsHovered('')}
@@ -86,7 +86,7 @@ const Navbar = () => {
               to="/activity"
               onClick={() => {
                 toggleMenu(); // Tutup menu saat tautan diklik
-                handleIconClick('activity'); // Set selectedIcon ke 'home'
+                handleLinkClick('activity'); // Set selectedIcon ke 'home'
               }}
               onMouseEnter={() => setIsHovered('activity')}
               onMouseLeave={() => setIsHovered('')}
@@ -97,7 +97,10 @@ const Navbar = () => {
             </Link>
             <Link
               to="/timeManagement"
-              onClick={toggleMenu}
+              onClick={() => {
+                toggleMenu(); // Tutup menu saat tautan diklik
+                handleLinkClick('timeManagement'); // Set selectedIcon ke 'home'
+              }}
               onMouseEnter={() => setIsHovered('timeManagement')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
@@ -107,7 +110,10 @@ const Navbar = () => {
             </Link>
             <Link
               to="/financialRecord"
-              onClick={toggleMenu}
+              onClick={() => {
+                toggleMenu(); // Tutup menu saat tautan diklik
+                handleLinkClick('financialRecord'); // Set selectedIcon ke 'home'
+              }}
               onMouseEnter={() => setIsHovered('financialRecord')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
@@ -117,7 +123,10 @@ const Navbar = () => {
             </Link>
             <Link
               to="/dietPlan"
-              onClick={toggleMenu}
+              onClick={() => {
+                toggleMenu(); // Tutup menu saat tautan diklik
+                handleLinkClick('dietPlan'); // Set selectedIcon ke 'home'
+              }}
               onMouseEnter={() => setIsHovered('dietPlan')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
