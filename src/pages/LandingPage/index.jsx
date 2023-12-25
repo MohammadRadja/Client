@@ -1,9 +1,8 @@
-import Company from './child/Company';
+// import Company from './child/Company';
 import Feature from './child/Feature';
 import Footer from './child/Footer';
 import Header from './child/Header';
 import Jumbotron from './child/Jumbotron';
-
 import Why from './child/Why';
 
 const LandingPage = () => {
@@ -11,7 +10,7 @@ const LandingPage = () => {
       <div className='w-full'>
       <Header />
       <Jumbotron />
-      <Company />
+      {/* <Company /> */}
       <Feature />
       <Why />
       <Footer />

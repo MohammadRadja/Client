@@ -6,12 +6,12 @@ function YourComponent() {
     <section className="bg-gray-50 dark:bg-gray-800">
       <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div className="mb-8 max-w-screen-md lg:mb-16">
-          <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
-            Designed for business teams like yours
-          </h2>
+        <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
+          Komponen Fitur Utama Dalam <span className="text-blue-600">LifeSyncHub</span>
+        </h2>
           <p className="text-gray-500 sm:text-xl dark:text-gray-400">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+          LifeSyncHub adalah aplikasi yang membantu pengguna dalam mengelola kehidupan sehari-hari dengan 4 fitur utama: 
+          Aktivitas, Manajemen Waktu, Diet Plan, dan Kesehatan Fisik. 
           </p>
         </div>
         <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -37,11 +37,9 @@ function YourComponent() {
             <h3 className="mb-2 text-xl font-bold dark:text-white">
               Activity
             </h3>
-            {/* <p className="text-gray-500 dark:text-gray-400">
-              Plan it, create it, launch it. Collaborate seamlessly with all the
-              organization and hit your marketing goals every month with our
-              marketing plan.
-            </p> */}
+            <p className="text-gray-500 dark:text-gray-400">
+              Fitur Activity memungkinkan pengguna membuat dan menyimpan catatan penting.
+            </p>
           </div>
           {/* End of Card 1 */}
 
@@ -67,11 +65,9 @@ function YourComponent() {
             <h3 className="mb-2 text-xl font-bold dark:text-white">
               Time Management
             </h3>
-            {/* <p className="text-gray-500 dark:text-gray-400">
-              Plan it, create it, launch it. Collaborate seamlessly with all the
-              organization and hit your marketing goals every month with our
-              marketing plan.
-            </p> */}
+            <p className="text-gray-500 dark:text-gray-400">
+              Fitur Manajemen Waktu memungkinkan pengguna untuk membuat jadwal dan mengatur prioritas.
+            </p>
           </div>
           {/* End of Card 2 */}
 
@@ -97,11 +93,9 @@ function YourComponent() {
             <h3 className="mb-2 text-xl font-bold dark:text-white">
               Financial Record
             </h3>
-            {/* <p className="text-gray-500 dark:text-gray-400">
-              Plan it, create it, launch it. Collaborate seamlessly with all the
-              organization and hit your marketing goals every month with our
-              marketing plan.
-            </p> */}
+            <p className="text-gray-500 dark:text-gray-400">
+              Fitur Kesehatan Fisik memberikan berita kesehatan terbaru.
+            </p>
           </div>
           {/* End of Card 3 */}
 
@@ -127,11 +121,9 @@ function YourComponent() {
             <h3 className="mb-2 text-xl font-bold dark:text-white">
               Diet Plan
             </h3>
-            {/* <p className="text-gray-500 dark:text-gray-400">
-              Plan it, create it, launch it. Collaborate seamlessly with all the
-              organization and hit your marketing goals every month with our
-              marketing plan.
-            </p> */}
+            <p className="text-gray-500 dark:text-gray-400">
+                Fitur Diet Plan mencatat detail konsumsi makanan harian.
+            </p>
           </div>
           {/* End of Card 4 */}
 

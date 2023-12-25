@@ -30,7 +30,7 @@ const ActivityList = () => {
       <div className="px-4 py-5 bg-white rounded-[17px] shadow-md">
         <div className="flex mb-2 items-center justify-between">
           <div className="text-2xl font-semibold">Recent Activity</div>
-          <button className=" text-2xl flex flex-wrap gap-4 justify-center">
+          <button className=" text-2xl flex flex-wrap gap-4 justify-center rounded-md hover:bg-blue-600 ">
             <AddActivity />
           </button>
         </div>

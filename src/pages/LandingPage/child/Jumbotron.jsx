@@ -4,16 +4,18 @@ const Jumbotron = () => {
     <section className="bg-white dark:bg-gray-900">
       <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="place-self-center mr-auto lg:col-span-7">
-          <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">
-            Payments tool for software companies
-          </h1>
+        <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl text-gray-900 dark:text-white">
+          Optimalkan Hidup Anda dengan <span className="text-blue-600">LifeSyncHub</span>
+        </h1>
           <p className="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            From checkout to global sales tax compliance, companies around the
-            world use Flowbite to simplify their payment stack.
+          LifeSyncHub adalah platform yang dirancang untuk membantu pengguna menyelaraskan dan mengelola berbagai aspek kehidupan mereka. 
+          Dengan fokus pada kesejahteraan umum, platform ini memungkinkan pengguna untuk mengintegrasikan keuangan, kesehatan fisik, dan manajemen waktu. 
+          Sebagai pusat sumber daya, 
+          LifeSyncHub memberikan alat dan informasi yang memungkinkan pengguna mencapai keseimbangan dan koordinasi dalam kehidupan mereka secara menyeluruh.
           </p>
           <a
             href="/login"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-blue-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2"
+            className="hidden lg:inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-blue-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-2"
           >
             Login
             <svg
@@ -31,7 +33,7 @@ const Jumbotron = () => {
           </a>
           <a
             href="/register"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-blue-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+            className="hidden lg:inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-blue-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
             Register
           </a>

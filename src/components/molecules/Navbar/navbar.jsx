@@ -4,7 +4,6 @@
 // import { CgMenuGridO } from "react-icons/cg";
 import { BiHomeSmile, BiListCheck, BiTime, BiMoney} from "react-icons/bi";
 import { GiWeightLiftingUp } from "react-icons/gi";
-import { IoMdLogOut } from "react-icons/io";
 import { useSignOut } from "react-auth-kit";
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect} from "react";
@@ -85,7 +84,7 @@ const Navbar = () => {
               to="/activity"
               onClick={() => {
                 toggleMenu(); // Tutup menu saat tautan diklik
-                handleLinkClick('activity'); // Set selectedIcon ke 'home'
+                handleLinkClick('activity'); // Set selectedIcon ke 'activity'
               }}
               onMouseEnter={() => setIsHovered('activity')}
               onMouseLeave={() => setIsHovered('')}
@@ -98,7 +97,7 @@ const Navbar = () => {
               to="/timeManagement"
               onClick={() => {
                 toggleMenu(); // Tutup menu saat tautan diklik
-                handleLinkClick('timeManagement'); // Set selectedIcon ke 'home'
+                handleLinkClick('timeManagement'); // Set selectedIcon ke 'timeManagement'
               }}
               onMouseEnter={() => setIsHovered('timeManagement')}
               onMouseLeave={() => setIsHovered('')}
@@ -111,7 +110,7 @@ const Navbar = () => {
               to="/financialRecord"
               onClick={() => {
                 toggleMenu(); // Tutup menu saat tautan diklik
-                handleLinkClick('financialRecord'); // Set selectedIcon ke 'home'
+                handleLinkClick('financialRecord'); // Set selectedIcon ke 'financialRecord'
               }}
               onMouseEnter={() => setIsHovered('financialRecord')}
               onMouseLeave={() => setIsHovered('')}
@@ -124,7 +123,7 @@ const Navbar = () => {
               to="/dietPlan"
               onClick={() => {
                 toggleMenu(); // Tutup menu saat tautan diklik
-                handleLinkClick('dietPlan'); // Set selectedIcon ke 'home'
+                handleLinkClick('dietPlan'); // Set selectedIcon ke 'dietPlan'
               }}
               onMouseEnter={() => setIsHovered('dietPlan')}
               onMouseLeave={() => setIsHovered('')}
@@ -132,6 +131,18 @@ const Navbar = () => {
               ${isHovered === 'dietPlan' || selectedIcon === 'dietPlan' ? 'bg-primary' : ''}`}
               >
               Diet Plan
+            </Link>
+            <Link
+              to="/home"
+              onClick={() => {
+                signOut();
+              }}
+              onMouseEnter={() => setIsHovered('Sign Out')}
+              onMouseLeave={handleMouseLeave}
+              className={`block px-4 py-2 transition duration-300 cursor pointer
+              ${isHovered === 'signOut' || selectedIcon === 'signOut' ? 'bg-primary' : ''}`}
+              >
+              Log Out
             </Link>
           </div>
         </div>
@@ -209,7 +220,7 @@ const Navbar = () => {
           <IoNotifications />
         </div>
       </Link> */}
-      <Link to='/home'>
+      {/* <Link to='/home'>
         <button
           onMouseEnter={() => setIsHovered('signOut')}
           onMouseLeave={handleMouseLeave}
@@ -220,7 +231,7 @@ const Navbar = () => {
         >
           <IoMdLogOut />
         </button>
-      </Link>
+      </Link> */}
       </div>
         {/* Navbar Right End */}
 
