@@ -1,8 +1,3 @@
-import React from "react";
-
-import { HiBookOpen } from "react-icons/hi";
-import { TfiVideoClapper } from "react-icons/tfi";
-import { AiOutlinePlus } from "react-icons/ai";
 import Layout from "../Layout";
 import ActivityCard from "../../components/molecules/ActivityCard";
 import AddActivity from "../../components/molecules/Modal/AddActivity";

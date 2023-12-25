@@ -58,10 +58,9 @@ const Navbar = () => {
   return (
     <div className="py-2 px-4 bg-white shadow flex justify-between top-0 sticky z-50">
        <Link to='/home' className="flex items-center">
-        <img src="/images/logo.png" alt="LifeSyncHub logo" className='w-10 h-10' />
+        <img src="/images/logo.png" alt="LifeSyncHub logo" className='w-10 h-10 sm:h-9 mr-3' />
         </Link>
-
-
+        
       {/* Hamburger Menu */}
       <button onClick={toggleMenu} className="lg:hidden ml-auto text-3xl focus:outline-none">
         ☰

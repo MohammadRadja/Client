@@ -1,4 +1,3 @@
-import React from "react";
 import { RiVideoAddFill } from "react-icons/ri";
 import { BiSearch, BiEdit } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
