@@ -5,7 +5,6 @@ import { instance } from "../../../utils/instance";
 
 const CrudModal = () => {
   const authHeader = useAuthHeader();
-  console.log("Auth header ", authHeader());
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
