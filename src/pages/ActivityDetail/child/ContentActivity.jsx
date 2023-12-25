@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useFormik } from "formik";
-import { CgEditContrast } from "react-icons/cg";
-import { IoCloudUploadOutline } from "react-icons/io5";
+// import { CgEditContrast } from "react-icons/cg";
+// import { IoCloudUploadOutline } from "react-icons/io5";
 import { RiEditBoxFill } from "react-icons/ri";
 import { BsTrash2Fill } from "react-icons/bs";
 const ContentActivity = ({ data }) => {
@@ -83,21 +83,27 @@ const ContentActivity = ({ data }) => {
       goal: data.goal,
       date: data.createdAt,
     });
-  }, [data]);
+  }, [data, formik]);
   return (
-    <div className="max-w-2xl px-6 py-4 mx-auto space-y-16 dark:bg-gray-800 dark:text-gray-50">
+    <div className="max-w-2xl px-6 py-4 mx-auto space-y-8 dark:bg-gray-800 dark:text-gray-50">
       <div className="w-full mx-auto space-y-4">
-        <h1 className="text-4xl font-bold leadi">
+        <h1 className="text-4xl font-bold">
           {data.title}
         </h1>
-        <div className="flex flex-wrap space-x-2 text-l dark:text-gray-400">
-          <span>on</span>
-          <time datetime="2021-02-12 15:34:18-0200">{data.createdAt}Tanggal belum nampil</time>
-          <RiEditBoxFill className="w-6 h-6 text-primary" onClick={() => setUpdateModal(!updateModal)} />
-          <BsTrash2Fill className="w-6 h-6 text-red-500" onClick={() => setDeleteModal(!deleteModal)} />
+        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+          <span>Posted on</span>
+          <time className="ml-2" dateTime="2021-02-12 15:34:18-0200">{data.createdAt || 'Data Tanggal Belum Tampil'}</time>
         </div>
-        <div className="dark:text-gray-100 text-lg">
+        <div className="text-lg leading-relaxed dark:text-gray-100">
           <p>{data.goal}</p>
+        </div>
+        <div className="flex items-center space-x-4">
+          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
+            <RiEditBoxFill className="w-5 h-5" onClick={() => setUpdateModal(!updateModal)} />
+          </button>
+          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500 text-white focus:outline-none">
+            <BsTrash2Fill className="w-5 h-5" onClick={() => setDeleteModal(!deleteModal)} />
+          </button>
         </div>
       </div>
       {/* <div className="flex gap-3 justify-center"> */}
