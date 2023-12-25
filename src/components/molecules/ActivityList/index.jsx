@@ -41,7 +41,7 @@ const ActivityList = () => {
                 key={item.id}
                 title={item.title}
                 goal={item.goal}
-                id={`${item.id}`}
+                id={item.id}
               />
             );
           })}

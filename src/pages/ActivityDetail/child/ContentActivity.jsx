@@ -92,7 +92,7 @@ const ContentActivity = ({ data }) => {
         </h1>
         <div className="flex flex-wrap space-x-2 text-l dark:text-gray-400">
           <span>on</span>
-          <time datetime="2021-02-12 15:34:18-0200">{data.createdAt}</time>
+          <time datetime="2021-02-12 15:34:18-0200">{data.createdAt}Tanggal belum nampil</time>
           <RiEditBoxFill className="w-6 h-6 text-primary" onClick={() => setUpdateModal(!updateModal)} />
           <BsTrash2Fill className="w-6 h-6 text-red-500" onClick={() => setDeleteModal(!deleteModal)} />
         </div>
