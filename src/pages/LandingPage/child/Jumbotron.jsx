@@ -1,19 +1,48 @@
+import React from "react";
+
 const Jumbotron = () => {
   return (
-    <section className="grid grid-cols-2 items-center my-20">
-      <div>
-        <div className="w-[300jjjkpx] h-[72px] bg-white bg-opacity-25 rounded-[40px] border border-zinc-400 text-neutral-600 text-[32px] font-bold font-['Satoshi']">
-        Health Matters
+    <section className="bg-white dark:bg-gray-900">
+      <div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="place-self-center mr-auto lg:col-span-7">
+          <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">
+            Payments tool for software companies
+          </h1>
+          <p className="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            From checkout to global sales tax compliance, companies around the
+            world use Flowbite to simplify their payment stack.
+          </p>
+          <a
+            href="#"
+            className="inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center text-black rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+          >
+            Get started
+            <svg
+              className="ml-2 -mr-1 w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-blue-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          >
+            Speak to Sales
+          </a>
         </div>
-         <div className="w-[823px]">
-          <span className="text-blue-600 text-[90px] font-bold leading-[105px]">One Step Solution <br/></span>
-          <span className="text-black text-[90px] font-bold leading-[105px]">for all your dietary needs.</span>
+        <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+          <img
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
+            alt="mockup"
+          />
         </div>
-        <div className="w-[762px] text-zinc-500 text-[32px] font-bold font-['Helvetica'] leading-[43px]">Using your BMI index we calculate whether the dish is suitable for you.</div>
-        <div className="text-blue-500 text-[34px] font-black font-['Helvetica'] tracking-[7.82px]">FEATURES WE PROVIDE</div>
-      </div>
-      <div>
-        <img src="/images/jumbotron.png" alt="jumbotron" />
       </div>
     </section>
   );

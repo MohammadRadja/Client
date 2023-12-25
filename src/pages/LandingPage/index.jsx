@@ -1,11 +1,20 @@
+import Company from './child/Company';
+import Feature from './child/Feature';
+import Footer from './child/Footer';
+import Header from './child/Header';
 import Jumbotron from './child/Jumbotron';
-import NewsList from './child/NewsList';
+
+import Why from './child/Why';
 
 const LandingPage = () => {
   return (
       <div className='w-full'>
+      <Header />
       <Jumbotron />
-      <NewsList />
+      <Company />
+      <Feature />
+      <Why />
+      <Footer />
       </div>
   );
 };

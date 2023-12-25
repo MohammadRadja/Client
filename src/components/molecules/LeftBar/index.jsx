@@ -11,9 +11,9 @@
 
     return (
         <div className="px-4 fixed mt-5 hidden lg:block">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mt-4">
         <p>
-            Halooo!!,<span className="font-bold">{user().name}</span>
+            Halooo!!,<span className="font-bold mb-2">{user().name}</span>
         </p>
             <LeftSidebarLink icon={<BiHomeSmile />} text="Home" to='/home' />
             <LeftSidebarLink icon={<BiListCheck />} text="Activity" to='/activity' />

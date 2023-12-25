@@ -78,7 +78,7 @@ const Navbar = () => {
               onMouseEnter={() => setIsHovered('home')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
-              ${isHovered === 'home' || selectedIcon === 'home' ? 'bg-gray-300' : ''}`}
+              ${isHovered === 'home' || selectedIcon === 'home' ? 'bg-primary' : ''}`}
             >
               Home
             </Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
               onMouseEnter={() => setIsHovered('activity')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
-              ${isHovered === 'activity' || selectedIcon === 'activity' ? 'bg-gray-300' : ''}`}
+              ${isHovered === 'activity' || selectedIcon === 'activity' ? 'bg-primary' : ''}`}
               >
               Activity
             </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
               onMouseEnter={() => setIsHovered('timeManagement')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
-              ${isHovered === 'timeManagement' || selectedIcon === 'timeManagement' ? 'bg-gray-300' : ''}`}
+              ${isHovered === 'timeManagement' || selectedIcon === 'timeManagement' ? 'bg-primary' : ''}`}
               >
               Time Management
             </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
               onMouseEnter={() => setIsHovered('financialRecord')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
-              ${isHovered === 'financialRecord' || selectedIcon === 'financialRecord' ? 'bg-gray-300' : ''}`}
+              ${isHovered === 'financialRecord' || selectedIcon === 'financialRecord' ? 'bg-primary' : ''}`}
               >
               Financial Record
             </Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
               onMouseEnter={() => setIsHovered('dietPlan')}
               onMouseLeave={() => setIsHovered('')}
               className={`block px-4 py-2 transition duration-300 cursor pointer
-              ${isHovered === 'dietPlan' || selectedIcon === 'dietPlan' ? 'bg-gray-300' : ''}`}
+              ${isHovered === 'dietPlan' || selectedIcon === 'dietPlan' ? 'bg-primary' : ''}`}
               >
               Diet Plan
             </Link>
@@ -170,8 +170,8 @@ const Navbar = () => {
 
 
       {/* Navbar Right */}
-      <div className="hidden lg:flex items-center gap-[20px] text-[30px]">
-      <Link to='/menu'>
+      <div className="lg:flex items-center gap-[20px] text-[30px]">
+      {/* <Link to='/menu'>
         <div
           onClick={() => handleLinkClick('menu')}
           onMouseEnter={() => setIsHovered('menu')}
@@ -200,12 +200,12 @@ const Navbar = () => {
         >
           <IoNotifications />
         </div>
-      </Link>
+      </Link> */}
       <Link to='/signOut'>
         <button
           onMouseEnter={() => setIsHovered('signOut')}
           onMouseLeave={handleMouseLeave}
-          className={`icon_wrapper text-[20px] cursor-pointer ${isHovered === 'signOut' ? 'text-blue-500' : ''}`}
+          className={`icon_wrapper text-[20px] ml-4 cursor-pointer ${isHovered === 'signOut' ? 'text-blue-500' : ''}`}
           onClick={() => {
             signOut();
           }}
