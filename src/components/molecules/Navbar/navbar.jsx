@@ -48,7 +48,6 @@ const Navbar = () => {
       <div className="hidden lg:flex items-center justify-center gap-[50px] text-[30px] text-gray-500">
       <Link to='/home'>
         <BiHomeSmile
-            className="text-primary"
             style={selectedIcon === 'home' ? { borderBottom: '3px solid blue' } : {}}
             onClick={() => handleIconClick('home')}
           />
@@ -90,9 +89,9 @@ const Navbar = () => {
 
         <div className="icon_wrapper text-[20px]">
           <BsMessenger />
-        </div>
+        </div> */}
 
-        <div className="icon_wrapper text-[20px]">
+        {/* <div className="icon_wrapper text-[20px]">
           <IoNotifications />
         </div> */}
         <button

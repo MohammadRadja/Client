@@ -5,6 +5,7 @@ import { TfiVideoClapper } from "react-icons/tfi";
 import { AiOutlinePlus } from "react-icons/ai";
 import Layout from "../Layout";
 import ActivityCard from "../../components/molecules/ActivityCard";
+import AddActivity from "../../components/molecules/Modal/AddActivity";
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
           <div className="flex mb-2 items-center justify-between">
             <div className="text-2xl font-semibold">Recent Activity</div>
             <button className=" text-2xl flex flex-wrap gap-4 justify-center">
-              <AiOutlinePlus />
+              <AddActivity />
             </button> 
           </div>
           <div className="relative flex gap-4 py-6 overflow-x-auto">
