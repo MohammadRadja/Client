@@ -29,11 +29,7 @@ const FinancialRecordList = () => {
     <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
       <div className="px-4 py-5 bg-white rounded-[17px] shadow-md">
         <div className="flex mb-2 items-center justify-between">
-<<<<<<< HEAD
           <div className="text-3xl font-semibold">Recent Financial Record</div>
-=======
-          <div className="text-2xl font-semibold">Recent Financial Record</div>
->>>>>>> 4643636abfc63df3f1f453b0ce4a85399796a03f
         </div>
         <div className="relative flex gap-4 py-6 overflow-x-auto">
           {data.map((item) => {
