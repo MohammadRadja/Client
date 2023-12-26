@@ -36,13 +36,9 @@ const LeftSidebar = () => {
           text="Diet Plan"
           to="/dietPlan"
         />
-
-     
-
-        <p className="text-[14px] text-gray-500 mt-2">
-          Privacy · Terms · Advertising · Ad choices · <br /> Cookies · Meta ©
-          2022
-        </p>
+      </div>
+      <div className="mt-4">
+        <p className="text-[15px] text-primary">· LifeSyncHub © 2023</p>
       </div>
     </div>
   );
