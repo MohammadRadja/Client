@@ -5,9 +5,9 @@ import { useAuthHeader, useIsAuthenticated } from "react-auth-kit";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useFormik } from "formik";
 import { RiEditBoxFill } from "react-icons/ri";
 import { BsTrash2Fill } from "react-icons/bs";
+import { useFormik } from "formik";
 import { data } from "autoprefixer";
 const ContentTimeManagement = ({ data }) => {
   const [deleteModal, setDeleteModal] = useState(false);
@@ -20,7 +20,7 @@ const ContentTimeManagement = ({ data }) => {
   const deletePost = async () => {
     try {
       await instance
-        .delete(`timeManagement/${params.id}`, {
+        .delete(`financialRecord/${params.id}`, {
           headers: {
             Authorization: token(),
           },
@@ -30,7 +30,7 @@ const ContentTimeManagement = ({ data }) => {
             icon: "👏",
           });
           setTimeout(() => {
-            window.location.href = "/timeManagement";
+            window.location.href = "/financialRecord";
           }, 500);
         });
     } catch (error) {
@@ -45,21 +45,23 @@ const ContentTimeManagement = ({ data }) => {
   // UPDATE MODAL
   const formik = useFormik({
     initialValues: {
-      task: data.task,
-      deadline: "", // Initialize with an empty string
-      priority: "",
+      title: data.title,
+      description: "",
+      category: "",
+      amount: "",
+      date: "",
     },
     onSubmit: async (values, action) => {
       action.setSubmitting(true);
 
       // Format the date before sending the request
-      const formattedDate = new Date(values.deadline).toISOString();
+      const formattedDate = new Date(values.date).toISOString();
 
       try {
         await instance
           .put(
-            `timeManagement/${params.id}`,
-            { ...values, deadline: formattedDate },
+            `financialRecord/${params.id}`,
+            { ...values, date: formattedDate },
             {
               headers: {
                 Authorization: token(),
@@ -88,47 +90,66 @@ const ContentTimeManagement = ({ data }) => {
 
   useEffect(() => {
     formik.setValues({
-      task: data.task,
-      deadline: data.deadline,
-      priority: data.priority,
+      title: data.title,
+      descripton: data.descripton,
+      category: data.category,
+      amount: data.amount,
+      date: data.date,
     });
   }, [data]);
   return (
     <div className="max-w-2xl px-6 py-4 mx-auto space-y-6">
-      <article className=" text-gray-900">
-        <div className="w-full mx-auto space-y-4 text-center">
-          <h1 className="text-3xl font-bold leadi md:text-4xl">{data.task}</h1>
+      <article className="space-y-8 text-gray-900">
+        <div className="space-y-6">
+          <h1 className="text-3xl font-bold md:tracki md:text-5xl">
+            {data.title}
+          </h1>
+          <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
+            <div className="flex items-center md:space-x-2">
+              <p className="text-m">
+                Tanggal Pengeluaran:{" "}
+                {new Date(data.date).toLocaleDateString("en-GB")}
+              </p>
+            </div>
+            <p className="flex-shrink-0 mt-3 text-m md:mt-0">
+              Total Pengeluaran: Rp. {data.amount}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
+            <RiEditBoxFill
+              className="w-5 h-5"
+              onClick={() => setUpdateModal(!updateModal)}
+            />
+          </button>
+          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500 text-white focus:outline-none">
+            <BsTrash2Fill
+              className="w-5 h-5"
+              onClick={() => setDeleteModal(!deleteModal)}
+            />
+          </button>
+        </div>
+      </article>
+      <div>
+        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-600">
           <a
             rel="noopener noreferrer"
             href="#"
-            className="mt-2 inline-block px-3 py-1 rounded-lg hover:underline bg-blue-600 text-gray-50"
+            className="px-3 py-1 rounded-sm hover:underline bg-blue-600 text-gray-50"
           >
-            {data.priority}
+            {data.category}
           </a>
-          <p className="text-l text-blue-600">
-            Deadline • {new Date(data.deadline).toLocaleDateString("en-GB")}
-          </p>
-          {/* button */}
-          <div className="flex items-center justify-center space-x-4">
-            <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
-              <RiEditBoxFill
-                className="w-5 h-5"
-                onClick={() => setUpdateModal(!updateModal)}
-              />
-            </button>
-            <button className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500 text-white focus:outline-none">
-              <BsTrash2Fill
-                className="w-5 h-5"
-                onClick={() => setDeleteModal(!deleteModal)}
-              />
-            </button>
-          </div>
         </div>
-      </article>
+        <div className="space-y-2">
+          <h4 className="text-lg font-semibold">Deskirpsi Pengeluaran </h4>
+          <p className="text-gray-900 text-justify">{data.description}</p>
+        </div>
+      </div>
 
       {/* DELETE */}
       <Modal
-        title={`Delete Blog ${data.task}`}
+        title={`Delete  ${data.title}`}
         handleModal={() => setDeleteModal(!deleteModal)}
         isOpen={deleteModal}
       >
@@ -157,7 +178,7 @@ const ContentTimeManagement = ({ data }) => {
 
       {/* UPDATE */}
       <Modal
-        title={`Update Blog ${data.title}`}
+        title={`Update ${data.title}`}
         handleModal={() => setUpdateModal(!updateModal)}
         isOpen={updateModal}
       >
@@ -168,14 +189,14 @@ const ContentTimeManagement = ({ data }) => {
                 htmlFor="title"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Task
+                Title
               </label>
               <input
                 onChange={formik.handleChange}
-                value={formik.values.task}
+                value={formik.values.title}
                 type="text"
-                name="task"
-                id="task"
+                name="title"
+                id="title"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Type product name"
                 required
@@ -183,17 +204,53 @@ const ContentTimeManagement = ({ data }) => {
             </div>
             <div className="mb-5">
               <label
-                htmlFor="deadline"
+                htmlFor="category"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Deadline
+                Category
               </label>
               <input
                 onChange={formik.handleChange}
-                value={formik.values.deadline}
+                value={formik.values.category}
+                type="text"
+                name="category"
+                id="category"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Type product name"
+                required
+              />
+            </div>
+            <div className="mb-5">
+              <label
+                htmlFor="amount"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Jumlah Pengeluaran
+              </label>
+              <input
+                onChange={formik.handleChange}
+                value={formik.values.amount}
+                type="number"
+                name="amount"
+                id="amount"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Type product name"
+                required
+              />
+            </div>
+            <div className="mb-5">
+              <label
+                htmlFor="date"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Tanggal Pengeluaran
+              </label>
+              <input
+                onChange={formik.handleChange}
+                value={formik.values.date}
                 type="date"
-                name="deadline"
-                id="deadline"
+                name="date"
+                id="date"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Select date"
                 required
@@ -201,17 +258,18 @@ const ContentTimeManagement = ({ data }) => {
             </div>
             <div className="mb-5">
               <label
-                htmlFor="title"
+                htmlFor="description"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Priority
+                Description
               </label>
-              <input
+              <textarea
                 onChange={formik.handleChange}
-                value={formik.values.priority}
+                value={formik.values.description}
                 type="text"
-                name="priority"
-                id="priority"
+                rows={3}
+                name="description"
+                id="description"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Type product name"
                 required
@@ -236,29 +294,6 @@ const ContentTimeManagement = ({ data }) => {
           </form>
         </div>
       </Modal>
-
-      {/* <div>
-        <div className="space-y-2">
-          <h4 className="text-lg font-semibold">Related posts</h4>
-          <ul className="ml-4 space-y-1 list-disc">
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Nunc id magna mollis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Duis molestie, neque eget pretium lobortis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Mauris nec urna volutpat, aliquam lectus sit amet
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div> */}
     </div>
   );
 };
