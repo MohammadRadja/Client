@@ -3,15 +3,16 @@ import { RiArrowRightLine } from "react-icons/ri";
 import PropTypes from "prop-types";
 const TimeManagementCard = ({ task, deadline, priority, id}) => {
   return (
-    <div className="max-w-xs w-[400px] h-[250] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
-      <h2 className="text-2xl font-bold text-gray-800 mb-2">
-        {task}
-      </h2>
-      <div className="flex mb-4 justify-between items-center">
-        <div className="flex items-center">
+    <div className="max-w-xs w-[400px] h-[270px] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
+       <a href="#" className="flex flex-col h-full">
+        <h5 className="mb-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {task}
+        </h5>
+      <div className="flex mb-10 justify-between items-center">
+        <div className="flex items-center mb-10">
           <span className="text-gray-800 font-semibold">{priority}</span>
         </div>
-        <span className="text-gray-600">{deadline}</span>
+        <span className="text-gray-600 mb-10">{deadline}</span>
       </div>
       <Link
         to={`/timeManagement/${id}`}
@@ -20,6 +21,7 @@ const TimeManagementCard = ({ task, deadline, priority, id}) => {
         Read more
         <RiArrowRightLine className="ml-2" />
       </Link>
+      </a>
     </div>
   );
 };

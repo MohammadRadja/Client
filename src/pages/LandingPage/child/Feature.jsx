@@ -7,7 +7,7 @@ function YourComponent() {
       <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div className="mb-8 max-w-screen-md lg:mb-16">
         <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
-          Komponen Fitur Utama Dalam <span className="text-blue-600">LifeSyncHub</span>
+          Eksplorasi Fitur Unggul <span className="text-blue-600">LifeSyncHub</span>
         </h2>
           <p className="text-gray-500 sm:text-xl dark:text-gray-400">
           LifeSyncHub adalah aplikasi yang membantu pengguna dalam mengelola kehidupan sehari-hari dengan 4 fitur utama: 

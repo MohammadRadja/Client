@@ -2,6 +2,7 @@
 // import { BsMessenger } from "react-icons/bs";
 // import { IoNotifications } from "react-icons/io5";
 // import { CgMenuGridO } from "react-icons/cg";
+import { IoMdLogOut } from "react-icons/io";
 import { BiHomeSmile, BiListCheck, BiTime, BiMoney} from "react-icons/bi";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { useSignOut } from "react-auth-kit";
@@ -220,18 +221,18 @@ const Navbar = () => {
           <IoNotifications />
         </div>
       </Link> */}
-      {/* <Link to='/home'>
+      <Link to='/home'>
         <button
           onMouseEnter={() => setIsHovered('signOut')}
           onMouseLeave={handleMouseLeave}
-          className={`icon_wrapper text-[20px] ml-4 cursor-pointer ${isHovered === 'signOut' ? 'text-blue-500' : ''}`}
+          className={`icon_wrapper text-[20px] ml-4 cursor-pointer md:hidden ${isHovered === 'signOut' ? 'text-blue-500' : ''}`}
           onClick={() => {
             signOut();
           }}
         >
           <IoMdLogOut />
         </button>
-      </Link> */}
+      </Link>
       </div>
         {/* Navbar Right End */}
 

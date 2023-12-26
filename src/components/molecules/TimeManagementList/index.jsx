@@ -1,4 +1,3 @@
-import AddTimeManagement from "../Modal/AddTimeManagement";
 import TimeManagementCard from "../TimeManagementCard";
 import { instance } from "../../../utils/instance";
 import { useAuthHeader } from "react-auth-kit";
@@ -30,9 +29,7 @@ const TimeManagementList = () => {
       <div className="px-4 py-5 bg-white rounded-[17px] shadow-md">
         <div className="flex mb-2 items-center justify-between">
           <div className="text-2xl font-semibold">Recent Time Management</div>
-          <button className=" text-2xl flex flex-wrap gap-4 justify-center">
-            <AddTimeManagement />
-          </button>
+          
         </div>
         <div className="relative flex gap-4 py-6 overflow-x-auto">
           {data.map((item) => {
