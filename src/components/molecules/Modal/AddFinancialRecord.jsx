@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const AddFinancialRecord = () => {
   const authHeader = useAuthHeader();
-  console.log(authHeader());
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
