@@ -15,7 +15,6 @@ const ContentActivity = ({ data }) => {
 
   const params = useParams();
   const token = useAuthHeader();
-
   const deletePost = async () => {
     try {
       await instance
@@ -82,39 +81,40 @@ const ContentActivity = ({ data }) => {
       date: data.createdAt,
     });
   }, [data]);
+
   return (
     <div className="max-w-2xl px-6 py-4 mx-auto space-y-8 dark:bg-gray-800 dark:text-gray-50">
       <div className="w-full mx-auto space-y-4">
         <h1 className="text-4xl font-bold text-center">{data.title}</h1>
         <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
           <div className="flex items-center md:space-x-2">
-              <p className="text-m">
-                Posted On  •
+            <p className="text-m">
+              Posted On •{" "}
+              <span>
                 {new Date(data.createdAt).toLocaleDateString("en-GB")}
-              </p>
+              </span>
+            </p>
           </div>
-          </div>
-          <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-600">
-            <span className="text-gray-900 mb-5 ">
-            {data.goal}
-            </span>
-          </div>
+        </div>
+        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-600">
+          <span className="text-gray-900 mb-5 ">{data.goal}</span>
+        </div>
 
         {/* button */}
         <div className="flex items-center space-x-4 mt-10">
-            <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
-              <RiEditBoxFill
-                className="w-5 h-5"
-                onClick={() => setUpdateModal(!updateModal)}
-              />
-            </button>
-            <button className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500 text-white focus:outline-none">
-              <BsTrash2Fill
-                className="w-5 h-5"
-                onClick={() => setDeleteModal(!deleteModal)}
-              />
-            </button>
-          </div>
+          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
+            <RiEditBoxFill
+              className="w-5 h-5"
+              onClick={() => setUpdateModal(!updateModal)}
+            />
+          </button>
+          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-red-500 text-white focus:outline-none">
+            <BsTrash2Fill
+              className="w-5 h-5"
+              onClick={() => setDeleteModal(!deleteModal)}
+            />
+          </button>
+        </div>
       </div>
       {/* <div className="flex gap-3 justify-center"> */}
       {/* DELETE */}
