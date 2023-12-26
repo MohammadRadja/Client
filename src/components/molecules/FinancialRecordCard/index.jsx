@@ -15,7 +15,7 @@ const FinancialRecordCard = ({
         <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">{title}</h2>
         <span className="text-gray-800 font-bold mb-5 text-center">{category}</span>
         <span className="text-gray-600 mb-2">
-          Tanggal Pengeluaran : {""}
+          Tanggal Pengeluaran : {" "}
           {new Date(date).toLocaleDateString("en-GB")}
         </span>
         <p className="text-gray-600 mb-2">
