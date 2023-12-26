@@ -4,7 +4,8 @@ function Why() {
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         {/* Left Content */}
         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-          <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">Fungsional <span className="text-blue-600">LifeSyncHub</span> Membantu Menjadi Lebih Produktif</h2>
+          <h2 className="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
+          Fungsional <span className="text-blue-600">LifeSyncHub</span>  Dapat Meningkatkan Produktivitas</h2>
           <p className="mb-4">Aplikasi LifeSyncHub dirancang untuk membantu pengguna mengelola kehidupan sehari-hari 
           dan mencapai tujuan secara positif. Ini mencakup pengelolaan kesehatan, produktivitas, pelacakan perkembangan, pengembangan pribadi, serta manajemen waktu. Keberhasilan aplikasi ini diukur dari kegunaan empat fitur utama: 
           Aktivitas, Manajemen Waktu, Diet Plan, dan Kesehatan Fisik dalam mendukung pengguna mencapai tujuan mereka.</p>
