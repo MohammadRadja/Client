@@ -1,17 +1,24 @@
-import { AuthProvider, useIsAuthenticated } from 'react-auth-kit';
-import { RouterProvider, createBrowserRouter, useRoutes, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import { Toaster } from 'react-hot-toast';
-import LandingPage from './pages/LandingPage';
-import TimeManagement from './pages/TimeManagement';
-import DietPlan from './pages/DietPlan';
-import FinancialRecord from './pages/FinancialRecord';
-import Activity from './pages/Activity';
-import ActivityDetail from './pages/ActivityDetail';
-import TimeManagementDetail from './pages/TimeManagementDetail';
-import FinancialRecordDetail from './pages/FinancialRecordDetail';
+import { AuthProvider, useIsAuthenticated } from "react-auth-kit";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  useRoutes,
+  Navigate,
+} from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import { Toaster } from "react-hot-toast";
+import LandingPage from "./pages/LandingPage";
+import TimeManagement from "./pages/TimeManagement";
+import DietPlan from "./pages/DietPlan";
+import FinancialRecord from "./pages/FinancialRecord";
+import Activity from "./pages/Activity";
+import ActivityDetail from "./pages/ActivityDetail";
+import TimeManagementDetail from "./pages/TimeManagementDetail";
+import FinancialRecordDetail from "./pages/FinancialRecordDetail";
+import DietPlanDetail from "./pages/DietPlanDetail";
+
 
 const PrivateRoute = ({ element }) => {
   const isAuth = useIsAuthenticated();
@@ -27,51 +34,56 @@ const PrivateRoute = ({ element }) => {
 const App = () => {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <LandingPage />,
     },
     {
-      path: '/login',
+      path: "/login",
       element: <Login />,
     },
     {
-      path: '/register',
+      path: "/register",
       element: <Register />,
     },
 
     {
-      path: '/home',
+      path: "/home",
       element: <PrivateRoute element={<Home />} />,
     },
 
     {
-      path: '/timeManagement',
+      path: "/timeManagement",
       element: <PrivateRoute element={<TimeManagement />} />,
     },
     {
-    path: '/timeManagement/:id',
-    element: <PrivateRoute element={<TimeManagementDetail />} />,
+      path: "/timeManagement/:id",
+      element: <PrivateRoute element={<TimeManagementDetail />} />,
     },
 
     {
-      path: '/dietPlan',
+      path: "/dietPlan",
       element: <PrivateRoute element={<DietPlan />} />,
     },
     {
-      path: '/financialRecord',
+      path: "/dietPlan/:id",
+      element: <PrivateRoute element={<DietPlanDetail />} />,
+    },
+
+    {
+      path: "/financialRecord",
       element: <PrivateRoute element={<FinancialRecord />} />,
     },
     {
-      path: '/financialRecord/:id',
+      path: "/financialRecord/:id",
       element: <PrivateRoute element={<FinancialRecordDetail />} />,
     },
 
     {
-      path: '/activity',
+      path: "/activity",
       element: <PrivateRoute element={<Activity />} />,
     },
     {
-      path: '/activity/:id',
+      path: "/activity/:id",
       element: <PrivateRoute element={<ActivityDetail />} />,
     },
   ]);
@@ -82,7 +94,7 @@ const App = () => {
         authName="_auth"
         authType="cookie"
         cookieDomain={window.location.hostname}
-        cookieSecure={window.location.protocol === 'https:'}
+        cookieSecure={window.location.protocol === "https:"}
       >
         <Toaster />
         <RouterProvider router={router} />
