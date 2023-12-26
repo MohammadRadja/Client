@@ -39,6 +39,7 @@ const TimeManagementList = () => {
                 deadline={item.deadline}
                 priority={item.priority}
                 id={item.id}
+                key={item.id}
               />
             );
           })}
