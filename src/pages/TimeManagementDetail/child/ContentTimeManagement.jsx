@@ -46,18 +46,26 @@ const ContentTimeManagement = ({ data }) => {
   const formik = useFormik({
     initialValues: {
       task: data.task,
-      deadline: "",
+      deadline: "", // Initialize with an empty string
       priority: "",
     },
     onSubmit: async (values, action) => {
       action.setSubmitting(true);
+
+      // Format the date before sending the request
+      const formattedDate = new Date(values.deadline).toISOString();
+
       try {
         await instance
-          .put(`timeManagement/${params.id}`, values, {
-            headers: {
-              Authorization: token(),
-            },
-          })
+          .put(
+            `timeManagement/${params.id}`,
+            { ...values, deadline: formattedDate },
+            {
+              headers: {
+                Authorization: token(),
+              },
+            }
+          )
           .then(() => {
             action.resetForm();
             toast("Update Success", {
@@ -70,6 +78,7 @@ const ContentTimeManagement = ({ data }) => {
       } catch (error) {
         toast(error.response.data.message, {
           icon: "❌",
+          console: error,
         });
       } finally {
         setUpdateModal(!updateModal);
@@ -94,7 +103,7 @@ const ContentTimeManagement = ({ data }) => {
           <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
             <div className="flex items-center md:space-x-2">
               <p className="text-l text-blue-600">
-                Daeadline • {data.deadline}
+                Deadline • {new Date(data.deadline).toLocaleDateString("en-GB")}
               </p>
               <a
                 rel="noopener noreferrer"
@@ -179,7 +188,7 @@ const ContentTimeManagement = ({ data }) => {
             </div>
             <div className="mb-5">
               <label
-                htmlFor="title"
+                htmlFor="deadline"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Deadline

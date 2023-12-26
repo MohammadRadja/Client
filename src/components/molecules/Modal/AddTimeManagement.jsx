@@ -22,7 +22,10 @@ const AddTimeManagement = () => {
       action.setSubmitting(true);
       try {
         // Ensure the deadline is a string in "dd-MM-yyyy" format
-        const formattedDeadline = format(new Date(values.deadline), "dd-MM-yyyy");
+        const formattedDeadline = format(
+          new Date(values.deadline),
+          "dd-MM-yyyy"
+        );
 
         await instance.post(
           "timeManagement",
@@ -115,7 +118,7 @@ const AddTimeManagement = () => {
                       name="task"
                       id="task"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      placeholder="Type product name"
+                      placeholder="Type Task"
                       required
                     />
                   </div>
@@ -133,7 +136,7 @@ const AddTimeManagement = () => {
                       name="priority"
                       id="priority"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      placeholder="Type product name"
+                      placeholder="Type Priority"
                       required
                     />
                   </div>
@@ -151,8 +154,8 @@ const AddTimeManagement = () => {
                     type="date"
                     name="deadline"
                     id="deadline"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="Select date"
+                    className="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    
                     required
                   />
                 </div>

@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import { RiArrowRightLine } from "react-icons/ri";
 import PropTypes from "prop-types";
-const TimeManagementCard = ({ task, deadline, priority, id}) => {
+const TimeManagementCard = ({ task, deadline, priority, id }) => {
   return (
     <div className="max-w-xs w-[400px] h-[250] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
-      <h2 className="text-2xl font-bold text-gray-800 mb-2">
-        {task}
-      </h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-2">{task}</h2>
       <div className="flex mb-4 justify-between items-center">
         <div className="flex items-center">
           <span className="text-gray-800 font-semibold">{priority}</span>
         </div>
-        <span className="text-gray-600">{deadline}</span>
+        <a className="text-gray-600"> Deadline : <span>
+          {new Date(deadline).toLocaleDateString("en-GB")}</span>
+        </a>
       </div>
       <Link
         to={`/timeManagement/${id}`}
@@ -29,6 +29,6 @@ TimeManagementCard.propTypes = {
   deadline: PropTypes.string,
   priority: PropTypes.string,
   id: PropTypes.number,
-}
+};
 
 export default TimeManagementCard;
