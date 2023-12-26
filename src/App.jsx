@@ -11,6 +11,7 @@ import FinancialRecord from './pages/FinancialRecord';
 import Activity from './pages/Activity';
 import ActivityDetail from './pages/ActivityDetail';
 import TimeManagementDetail from './pages/TimeManagementDetail';
+import FinancialRecordDetail from './pages/FinancialRecordDetail';
 
 const PrivateRoute = ({ element }) => {
   const isAuth = useIsAuthenticated();
@@ -59,6 +60,10 @@ const App = () => {
     {
       path: '/financialRecord',
       element: <PrivateRoute element={<FinancialRecord />} />,
+    },
+    {
+      path: '/financialRecord/:id',
+      element: <PrivateRoute element={<FinancialRecordDetail />} />,
     },
 
     {
