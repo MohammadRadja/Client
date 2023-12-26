@@ -106,7 +106,7 @@ const ContentTimeManagement = ({ data }) => {
             </div>
           </div>
           <div className="flex flex-wrap justify-center py-3 gap-2 border-t border-dashed border-gray-600">
-            <span className="text-gray-800 font-bold mb-5">
+            <span className="text-primary uppercase font-bold mb-5">
               {data.priority}
             </span>
           </div>
