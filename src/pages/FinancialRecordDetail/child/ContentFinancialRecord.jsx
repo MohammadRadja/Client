@@ -119,13 +119,13 @@ const ContentTimeManagement = ({ data }) => {
       </article>
       <div>
         <div className="flex flex-wrap justify-center py-2 gap-2 border-t border-dashed border-gray-600">
-          <span className="text-gray-800 font-bold mb-10">
+          <span className="text-primary font-bold mb-1 uppercase">
           {data.category}
           </span>
         </div>
         <div className="space-y-2">
           <h4 className="text-lg font-semibold">Deskirpsi Pengeluaran </h4>
-          <p className="text-gray-900 text-justify">{data.description}</p>
+          <p className="text-gray-900 text-justify text-l">{data.description}</p>
         </div>
         <div className="flex items-center space-x-4 mt-10">
           <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
