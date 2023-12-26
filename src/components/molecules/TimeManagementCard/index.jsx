@@ -5,9 +5,9 @@ const TimeManagementCard = ({ task, deadline, priority, id }) => {
   return (
     <div className="max-w-xs w-[400px] h-[350] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
       <div className="flex flex-col h-full">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">{task}</h2>
-        <span className="text-primary font-bold mb-5 text-center uppercase">{priority}</span>
-        <span className="text-gray-600 mb-auto">
+        <h2 className="text-2xl font-bold text-gray-800 mb-auto text-center overflow-hidden ">{task}</h2>
+        <span className="text-primary font-bold mb-5 mt-5 text-center uppercase ">{priority}</span>
+        <span className="text-gray-600 mb-5">
           Deadline  :{" "}
           {new Date(deadline).toLocaleDateString("en-GB")}
         </span>
