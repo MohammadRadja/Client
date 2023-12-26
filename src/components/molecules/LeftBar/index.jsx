@@ -10,7 +10,7 @@ const LeftSidebar = () => {
   //   const { data: session } = useSession();
 
   return (
-    <div className="fixed hidden lg:block bg-white w-[300px] py-2 px-4 h-screen ">
+    <div className="fixed hidden lg:block bg-white w-[300px] py-2 px-4 h-screen">
       <div className="flex flex-col gap-2 mt-4">
         <p>
           Halooo!!,<span className="font-bold mb-2">{user().name}</span>
@@ -37,7 +37,7 @@ const LeftSidebar = () => {
           to="/dietPlan"
         />
       </div>
-      <div className="mt-4">
+      <div className="absolute bottom-8 mb-8">
         <p className="text-[15px] text-primary">· LifeSyncHub © 2023</p>
       </div>
     </div>

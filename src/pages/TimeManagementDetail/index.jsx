@@ -26,7 +26,7 @@ const TimeManagementDetail = () => {
       }
     };
     getDetailNews();
-  }, [params]);
+  }, [authHeader, params]);
   return (
     <Layout>
       <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
