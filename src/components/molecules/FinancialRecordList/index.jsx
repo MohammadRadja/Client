@@ -2,7 +2,6 @@ import FinancialRecordCard from "../FinancialRecordCard";
 import { instance } from "../../../utils/instance";
 import { useAuthHeader } from "react-auth-kit";
 import { useEffect, useState } from "react";
-import AddFinancialRecord from "../Modal/AddFinancialRecord";
 
 const FinancialRecordList = () => {
   const authHeader = useAuthHeader();

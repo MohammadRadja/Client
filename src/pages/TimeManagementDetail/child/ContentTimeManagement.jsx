@@ -98,18 +98,23 @@ const ContentTimeManagement = ({ data }) => {
       <article className=" text-gray-900">
         <div className="w-full mx-auto space-y-4 text-center">
           <h1 className="text-3xl font-bold leadi md:text-4xl">{data.task}</h1>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="mt-2 inline-block px-3 py-1 rounded-lg hover:underline bg-blue-600 text-gray-50"
-          >
+          <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
+          <div className="flex items-center md:space-x-2">
+              <p className="text-m">
+                Deadline •
+                {new Date(data.deadline).toLocaleDateString("en-GB")}
+              </p>
+          </div>
+          </div>
+          <div className="flex flex-wrap justify-center py-3 gap-2 border-t border-dashed border-gray-600">
+            <span className="text-gray-800 font-bold mb-5">
             {data.priority}
-          </a>
-          <p className="text-l text-blue-600">
-            Deadline • {new Date(data.deadline).toLocaleDateString("en-GB")}
-          </p>
+            </span>
+          </div>
+
+
           {/* button */}
-          <div className="flex items-center justify-center space-x-4">
+          <div className="flex items-center space-x-4 mt-10">
             <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
               <RiEditBoxFill
                 className="w-5 h-5"

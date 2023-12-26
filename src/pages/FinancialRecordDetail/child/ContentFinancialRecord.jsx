@@ -101,7 +101,7 @@ const ContentTimeManagement = ({ data }) => {
     <div className="max-w-2xl px-6 py-4 mx-auto space-y-6">
       <article className="space-y-8 text-gray-900">
         <div className="space-y-6">
-          <h1 className="text-3xl font-bold md:tracki md:text-5xl">
+          <h1 className="text-3xl font-bold md:tracki md:text-5xl text-center">
             {data.title}
           </h1>
           <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
@@ -116,7 +116,18 @@ const ContentTimeManagement = ({ data }) => {
             </p>
           </div>
         </div>
-        <div className="flex items-center space-x-4">
+      </article>
+      <div>
+        <div className="flex flex-wrap justify-center py-2 gap-2 border-t border-dashed border-gray-600">
+          <span className="text-gray-800 font-bold mb-10">
+          {data.category}
+          </span>
+        </div>
+        <div className="space-y-2">
+          <h4 className="text-lg font-semibold">Deskirpsi Pengeluaran </h4>
+          <p className="text-gray-900 text-justify">{data.description}</p>
+        </div>
+        <div className="flex items-center space-x-4 mt-10">
           <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
             <RiEditBoxFill
               className="w-5 h-5"
@@ -129,21 +140,6 @@ const ContentTimeManagement = ({ data }) => {
               onClick={() => setDeleteModal(!deleteModal)}
             />
           </button>
-        </div>
-      </article>
-      <div>
-        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-600">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline bg-blue-600 text-gray-50"
-          >
-            {data.category}
-          </a>
-        </div>
-        <div className="space-y-2">
-          <h4 className="text-lg font-semibold">Deskirpsi Pengeluaran </h4>
-          <p className="text-gray-900 text-justify">{data.description}</p>
         </div>
       </div>
 
