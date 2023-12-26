@@ -91,7 +91,7 @@ const ContentTimeManagement = ({ data }) => {
   useEffect(() => {
     formik.setValues({
       title: data.title,
-      descripton: data.descripton,
+      description: data.description,
       category: data.category,
       amount: data.amount,
       date: data.date,
@@ -123,7 +123,7 @@ const ContentTimeManagement = ({ data }) => {
           </span>
         </div>
         <div className="space-y-2">
-          <h4 className="text-lg font-semibold">Expense description</h4>
+          <h4 className="text-lg font-semibold">Expense Description</h4>
           <p className="text-gray-900 text-justify text-l">
             {data.description}
           </p>
@@ -152,7 +152,7 @@ const ContentTimeManagement = ({ data }) => {
       >
         <div className="mt-2">
           <p className="text-sm text-gray-500">
-            Apakah anda yakin ingin menghapus post ini?
+            Are you sure you want to delete this post?
           </p>
         </div>
         <div className="mt-4 flex gap-3">
@@ -161,14 +161,14 @@ const ContentTimeManagement = ({ data }) => {
             onClick={deletePost}
             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
-            Ya
+            Yes
           </button>
           <button
             type="button"
             onClick={() => setDeleteModal(!deleteModal)}
             className="inline-flex justify-center rounded-md border border-transparent bg-red-500 text-white px-4 py-2 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
-            Tidak
+            No
           </button>
         </div>
       </Modal>
@@ -222,7 +222,7 @@ const ContentTimeManagement = ({ data }) => {
                 htmlFor="amount"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Jumlah Pengeluaran
+                Total Spending
               </label>
               <input
                 onChange={formik.handleChange}
@@ -240,7 +240,7 @@ const ContentTimeManagement = ({ data }) => {
                 htmlFor="date"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Tanggal Pengeluaran
+                Expense Date
               </label>
               <input
                 onChange={formik.handleChange}
@@ -258,13 +258,13 @@ const ContentTimeManagement = ({ data }) => {
                 htmlFor="description"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Description
+                Expense Description
               </label>
               <textarea
                 onChange={formik.handleChange}
                 value={formik.values.description}
                 type="text"
-                rows={3}
+                rows="3"
                 name="description"
                 id="description"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -285,7 +285,7 @@ const ContentTimeManagement = ({ data }) => {
                 onClick={() => setUpdateModal(!updateModal)}
                 className="inline-flex justify-center rounded-md border border-transparent bg-red-500 text-white px-4 py-2 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
               >
-                Batal
+                Cancel
               </button>
             </div>
           </form>

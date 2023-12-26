@@ -116,7 +116,7 @@ const ContentActivity = ({ data }) => {
           </button>
         </div>
       </div>
-      {/* <div className="flex gap-3 justify-center"> */}
+
       {/* DELETE */}
       <Modal
         title={`Delete Blog ${data.title}`}
@@ -125,7 +125,7 @@ const ContentActivity = ({ data }) => {
       >
         <div className="mt-2">
           <p className="text-sm text-gray-500">
-            Apakah anda yakin ingin menghapus post ini?
+          Are you sure you want to delete this post?
           </p>
         </div>
         <div className="mt-4 flex gap-3">
@@ -134,14 +134,14 @@ const ContentActivity = ({ data }) => {
             onClick={deletePost}
             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
-            Ya
+            Yes
           </button>
           <button
             type="button"
             onClick={() => setDeleteModal(!deleteModal)}
             className="inline-flex justify-center rounded-md border border-transparent bg-red-500 text-white px-4 py-2 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
-            Tidak
+            No
           </button>
         </div>
       </Modal>
@@ -204,7 +204,7 @@ const ContentActivity = ({ data }) => {
                 onClick={() => setUpdateModal(!updateModal)}
                 className="inline-flex justify-center rounded-md border border-transparent bg-red-500 text-white px-4 py-2 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
               >
-                Batal
+                Cancel
               </button>
             </div>
           </form>
