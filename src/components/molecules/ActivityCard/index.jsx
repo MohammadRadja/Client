@@ -6,8 +6,7 @@ const ActivityCard = ({ title, goal, id }) => {
   return (
     <div className="max-w-xs w-[400px] h-[270px] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
       <a href="#" className="flex flex-col h-full">
-        <h5 className="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-=======
+        <h5 className="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
       <div className="flex flex-col h-full">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {title}
