@@ -15,11 +15,11 @@ const FinancialRecordCard = ({
         <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">{title}</h2>
         <span className="text-primary uppercase font-bold mb-5 text-center">{category}</span>
         <span className="text-gray-600 mb-2">
-          Tanggal Pengeluaran : {" "}
+        Expense Date : {" "}
           {new Date(date).toLocaleDateString("en-GB")}
         </span>
         <p className="text-gray-600 mb-2">
-          Total Pengeluaran : Rp. {amount},00
+        Total Spending : Rp. {amount},00
         </p>
         <p className="mb-3 font-normal text-black-700 dark:text-gray-400 overflow-hidden h-full">
           {description}

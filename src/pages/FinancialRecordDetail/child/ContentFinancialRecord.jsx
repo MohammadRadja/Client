@@ -107,12 +107,11 @@ const ContentTimeManagement = ({ data }) => {
           <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
             <div className="flex items-center md:space-x-2">
               <p className="text-m">
-                Tanggal Pengeluaran:{" "}
-                {new Date(data.date).toLocaleDateString("en-GB")}
+                Expense Date : {new Date(data.date).toLocaleDateString("en-GB")}
               </p>
             </div>
             <p className="flex-shrink-0 mt-3 text-m md:mt-0">
-              Total Pengeluaran: Rp. {data.amount}
+              Total Spending : Rp. {data.amount}
             </p>
           </div>
         </div>
@@ -120,12 +119,14 @@ const ContentTimeManagement = ({ data }) => {
       <div>
         <div className="flex flex-wrap justify-center py-2 gap-2 border-t border-dashed border-gray-600">
           <span className="text-primary font-bold mb-1 uppercase">
-          {data.category}
+            {data.category}
           </span>
         </div>
         <div className="space-y-2">
-          <h4 className="text-lg font-semibold">Deskirpsi Pengeluaran </h4>
-          <p className="text-gray-900 text-justify text-l">{data.description}</p>
+          <h4 className="text-lg font-semibold">Expense description</h4>
+          <p className="text-gray-900 text-justify text-l">
+            {data.description}
+          </p>
         </div>
         <div className="flex items-center space-x-4 mt-10">
           <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white focus:outline-none">
