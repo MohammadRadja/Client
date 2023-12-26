@@ -81,7 +81,7 @@ const ContentActivity = ({ data }) => {
       goal: data.goal,
       date: data.createdAt,
     });
-  }, [data, formik, checkAuth]);
+  }, [data]);
   return (
     <div className="max-w-2xl px-6 py-4 mx-auto space-y-8 dark:bg-gray-800 dark:text-gray-50">
       <div className="w-full mx-auto space-y-4">

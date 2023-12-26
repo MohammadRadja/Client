@@ -27,11 +27,11 @@ const LeftSidebarLink = ({ icon, text, to }) => {
       onMouseLeave={handleMouseLeave}
     >
       {icon && (
-        <span className={`text-xl ${isHovered ? 'text-blue-500' : ''}`}>
+        <span className={`text-xl ${isHovered ? 'text-primary' : ''}`}>
           {icon}
         </span>
       )}
-      <h1 className={`text-[16px] font-medium ${isHovered ? 'text-blue-500' : ''}`}>
+      <h1 className={`text-[16px] font-medium ${isHovered ? 'text-primary' : ''}`}>
         {text}
       </h1>
     </Link>
