@@ -225,7 +225,7 @@ const Navbar = () => {
         <button
           onMouseEnter={() => setIsHovered('signOut')}
           onMouseLeave={handleMouseLeave}
-          className={`icon_wrapper text-[20px] ml-4 cursor-pointer md:hidden ${isHovered === 'signOut' ? 'text-blue-500' : ''}`}
+          className={`hidden lg:icon_wrapper text-[20px] ml-4 cursor-pointer  ${isHovered === 'signOut' ? 'text-blue-500' : ''}`}
           onClick={() => {
             signOut();
           }}
