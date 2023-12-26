@@ -11,7 +11,7 @@ const FinancialRecordCard = ({
 }) => {
   return (
     <div className="max-w-xs w-[400px] h-[350] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
-      <a href="#" className="flex flex-col h-full">
+      <div className="flex flex-col h-full">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">{title}</h2>
         <p className="text-lm font-bold text-gray-800 mb-2">Rp. {amount}</p>
         <span className="text-gray-800 font-semibold mb-2">{category}</span>
@@ -30,7 +30,7 @@ const FinancialRecordCard = ({
           Read more
           <RiArrowRightLine className="ml-2" />
         </Link>
-      </a>
+      </div>
     </div>
   );
 };
