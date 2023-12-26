@@ -1,8 +1,8 @@
-import AddTimeManagement from "../Modal/AddTimeManagement";
 import FinancialRecordCard from "../FinancialRecordCard";
 import { instance } from "../../../utils/instance";
 import { useAuthHeader } from "react-auth-kit";
 import { useEffect, useState } from "react";
+import AddFinancialRecord from "../Modal/AddFinancialRecord";
 
 const FinancialRecordList = () => {
   const authHeader = useAuthHeader();
@@ -10,7 +10,7 @@ const FinancialRecordList = () => {
   const getTimeManagements = async () => {
     try {
       await instance
-        .get("timeManagement", {
+        .get("financialRecord", {
           headers: {
             Authorization: authHeader(),
           },
@@ -30,18 +30,18 @@ const FinancialRecordList = () => {
       <div className="px-4 py-5 bg-white rounded-[17px] shadow-md">
         <div className="flex mb-2 items-center justify-between">
           <div className="text-2xl font-semibold">Recent Financial Record</div>
-          <button className=" text-2xl flex flex-wrap gap-4 justify-center">
-            <AddTimeManagement />
-          </button>
         </div>
         <div className="relative flex gap-4 py-6 overflow-x-auto">
           {data.map((item) => {
             return (
               <FinancialRecordCard
-                task={item.task}
-                deadline={item.deadline}
-                priority={item.priority}
+                title={item.title}
+                description={item.description}
+                category={item.category}
+                amount={item.amount}
+                date={item.date}
                 id={item.id}
+                key={item.id}
               />
             );
           })}
