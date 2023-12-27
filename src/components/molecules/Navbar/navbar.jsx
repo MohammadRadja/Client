@@ -46,6 +46,8 @@ const Navbar = () => {
         setSelectedIcon('financialRecord');
       } else if (location.pathname === '/dietPlan') {
         setSelectedIcon('dietPlan');
+      } else if (location.pathname === '/blog') {
+        setSelectedIcon('blog');
       } else {
         setSelectedIcon('');
       }
