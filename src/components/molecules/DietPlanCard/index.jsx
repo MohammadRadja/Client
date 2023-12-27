@@ -12,11 +12,11 @@ const DietPlanCard = ({
   return (
     <div className="max-w-xs w-[400px] h-[350] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
       <div className="flex flex-col h-full">
-        <h2 className="text-2xl font-bold text-secondary mb-2 text-center">
-          {mealType}
+        <h2 className="text-xl font-bold text-secondary mb-2 text-center">
+          {foodItem}
         </h2>
         <span className="text-primary uppercase font-bold mb-5 text-center">
-          {foodItem}
+          {mealType}
         </span>
         <span className="text-tertiary mb-2">
           Consumption Date : {new Date(createdAt).toLocaleDateString("en-GB")}
