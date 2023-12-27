@@ -24,7 +24,7 @@ const BlogCard = ({ title, image, content, id }) => {
           <h3 className="text-xl text-primary font-semibold group-hover:underline group-focus:underline">
             {truncatedTitle}
           </h3>
-          <p>{truncatedContent}</p> {/* Menggunakan versi teks yang dipotong */}
+          <p className="text-tertiary">{truncatedContent}</p> {/* Menggunakan versi teks yang dipotong */}
         </div>
       </div>
     </Link>

@@ -11,17 +11,18 @@ const DietPlanCard = ({
 }) => {
   return (
     <div className="max-w-xs w-[400px] h-[350] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
-      <a href="#" className="flex flex-col h-full">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">{mealType}</h2>
-        <span className="text-primary uppercase font-bold mb-5 text-center">{foodItem}</span>
-        <span className="text-gray-600 mb-2">
-        Consumption Date : {" "}
-          {new Date(createdAt).toLocaleDateString("en-GB")}
+      <div className="flex flex-col h-full">
+        <h2 className="text-2xl font-bold text-secondary mb-2 text-center">
+          {mealType}
+        </h2>
+        <span className="text-primary uppercase font-bold mb-5 text-center">
+          {foodItem}
         </span>
-        <p className="text-gray-600 mb-2">
-          Total Calories : {calories}
-        </p>
-        <p className="mb-3 font-normal text-black-700 dark:text-gray-400 overflow-hidden h-full">
+        <span className="text-tertiary mb-2">
+          Consumption Date : {new Date(createdAt).toLocaleDateString("en-GB")}
+        </span>
+        <p className="text-tertiary mb-2">Total Calories : {calories}</p>
+        <p className="mb-3 font-normal text-tertiary dark:text-gray-400 overflow-hidden h-full">
           {description}
         </p>
 
@@ -32,7 +33,7 @@ const DietPlanCard = ({
           Read more
           <RiArrowRightLine className="ml-2" />
         </Link>
-      </a>
+      </div>
     </div>
   );
 };
