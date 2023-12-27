@@ -9,7 +9,7 @@ const BlogCard = ({ title, image, content, id }) => {
     return text.substring(0, maxLength) + "..."; // Mengambil hanya sebagian teks sesuai maxLength dan menambahkan elipsis
   };
 
-  const truncatedTitle = truncateText(title, 60);
+  const truncatedTitle = truncateText(title, 55);
   const truncatedContent = truncateText(content, 150); // Ganti 150 dengan panjang karakter yang Anda inginkan
 
   return (
