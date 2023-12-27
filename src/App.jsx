@@ -18,7 +18,8 @@ import ActivityDetail from "./pages/ActivityDetail";
 import TimeManagementDetail from "./pages/TimeManagementDetail";
 import FinancialRecordDetail from "./pages/FinancialRecordDetail";
 import DietPlanDetail from "./pages/DietPlanDetail";
-
+import BlogDetail from "./pages/BlogDetail";
+import Blog from "./pages/Blog";
 
 const PrivateRoute = ({ element }) => {
   const isAuth = useIsAuthenticated();
@@ -85,6 +86,15 @@ const App = () => {
     {
       path: "/activity/:id",
       element: <PrivateRoute element={<ActivityDetail />} />,
+    },
+
+    {
+      path: "/blog",
+      element: <PrivateRoute element={<Blog />} />,
+    },
+    {
+      path: "/blog/:id",
+      element: <PrivateRoute element={<BlogDetail />} />,
     },
   ]);
 
