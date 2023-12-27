@@ -34,14 +34,16 @@ const FinanialRecord = () => {
       <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
         <div className="px-4 py-4 bg-white rounded-[17px] shadow-md">
           <div className="flex mb-5 items-center justify-between">
-            <div className="text-2xl text-secondarys font-semibold">Financial Record</div>
+            <div className="text-2xl text-secondarys font-semibold">
+              Financial Record
+            </div>
             <button className=" text-2xl flex flex-wrap gap-4 justify-center">
               <AddFinancialRecord />
             </button>
           </div>
-          {data.length > 0 ? (
-            data.map((item) => (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
+            {data.length > 0 ? (
+              data.map((item) => (
                 <FinancialRecordCard
                   title={item.title}
                   description={item.description}
@@ -51,13 +53,14 @@ const FinanialRecord = () => {
                   id={item.id}
                   key={item.id}
                 />
+              ))
+            ) : (
+              <div className="col-span-2 flex items-center justify-center">
+                {" "}
+                <NoData />
               </div>
-            ))
-          ) : (
-            <div className="col-span-2 flex items-center justify-center">
-              <NoData />
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </Layout>

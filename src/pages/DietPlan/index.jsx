@@ -41,9 +41,9 @@ const DietPlan = () => {
               <AddDietPlan />
             </button>
           </div>
-          {data.length > 0 ? (
-            data.map((item) => (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
+            {data.length > 0 ? (
+              data.map((item) => (
                 <DietPlanCard
                   mealType={item.mealType}
                   calories={item.calories}
@@ -52,13 +52,14 @@ const DietPlan = () => {
                   id={item.id}
                   key={item.id}
                 />
+              ))
+            ) : (
+              <div className="col-span-2 flex items-center justify-center">
+                {" "}
+                <NoData />
               </div>
-            ))
-          ) : (
-            <div className="col-span-2 flex items-center justify-center">
-              <NoData />
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </Layout>
