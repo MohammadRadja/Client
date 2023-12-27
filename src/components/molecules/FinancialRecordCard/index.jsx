@@ -11,17 +11,17 @@ const FinancialRecordCard = ({
 }) => {
   return (
     <div className="max-w-xs w-[400px] h-[350] p-6 mb-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-shrink-0 overflow-hidden">
-      <a href="#" className="flex flex-col h-full">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">{title}</h2>
+      <div className="flex flex-col h-full">
+        <h2 className="text-2xl font-bold text-secondary mb-2 text-center">{title}</h2>
         <span className="text-primary uppercase font-bold mb-5 text-center">{category}</span>
-        <span className="text-gray-600 mb-2">
+        <span className="text-secondary mb-2">
         Expense Date : {" "}
           {new Date(date).toLocaleDateString("en-GB")}
         </span>
-        <p className="text-gray-600 mb-2">
+        <p className="text-secondary mb-2">
         Total Spending : Rp. {amount},00
         </p>
-        <p className="mb-3 font-normal text-black-700 dark:text-gray-400 overflow-hidden h-full">
+        <p className="mb-3 font-normal text-tertiary dark:text-gray-400 overflow-hidden h-full">
           {description}
         </p>
 
@@ -32,7 +32,7 @@ const FinancialRecordCard = ({
           Read more
           <RiArrowRightLine className="ml-2" />
         </Link>
-      </a>
+      </div>
     </div>
   );
 };

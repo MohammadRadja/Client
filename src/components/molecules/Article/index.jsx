@@ -21,7 +21,7 @@ const Article = ({ title, content, id }) => {
           <h1 className="font-semibold text-primary hover:underline">
             {truncatedTitle}
           </h1>
-          <p className="text-gray-500 text-[14px]">{truncatedContent}</p>
+          <p className="text-tertiary text-[14px]">{truncatedContent}</p>
         </div>
       </div>
     </Link>

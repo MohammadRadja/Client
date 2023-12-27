@@ -36,7 +36,7 @@ const Blog = () => {
       <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
         <div className="px-4 py-4 bg-white rounded-[17px] shadow-md">
           <div className="flex mb-5 items-center justify-between">
-            <div className="text-2xl font-semibold">Health Article</div>
+            <div className="text-2xl text-secondary font-semibold">Health Article</div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
             {data.length > 0 ? (
