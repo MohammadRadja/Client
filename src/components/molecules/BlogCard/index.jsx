@@ -6,25 +6,25 @@ const BlogCard = ({ title, image, content, id }) => {
     if (text.length <= maxLength) {
       return text;
     }
-    return text.substring(0, maxLength) + "..."; // Mengambil hanya sebagian teks sesuai maxLength dan menambahkan elipsis
+    return text.substring(0, maxLength) + "...";
   };
 
   const truncatedTitle = truncateText(title, 55);
-  const truncatedContent = truncateText(content, 150); // Ganti 150 dengan panjang karakter yang Anda inginkan
+  const truncatedContent = truncateText(content, 190);
 
   return (
     <Link to={`/blog/${id}`}>
-      <div className="max-w-sm mx-auto group w-[350px] h-[380px] hover:no-underline focus:no-underline bg-white border border-gray-200 rounded-lg shadow">
+      <div className="max-w-sm mx-auto group w-[350px] h-[390px] hover:no-underline focus:no-underline bg-white border border-gray-200 rounded-lg shadow">
         <img
           role="presentation"
           className="object-cover w-full rounded h-44 bg-gray-500"
           src={image}
         />
-        <div className="p-6 space-y-2">
+        <div className="p-4 space-y-1">
           <h3 className="text-xl text-primary font-semibold group-hover:underline group-focus:underline">
             {truncatedTitle}
           </h3>
-          <p className="text-tertiary">{truncatedContent}</p> {/* Menggunakan versi teks yang dipotong */}
+          <p className="text-tertiary text-justify">{truncatedContent}</p>
         </div>
       </div>
     </Link>
