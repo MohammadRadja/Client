@@ -2,6 +2,7 @@ import FinancialRecordCard from "../FinancialRecordCard";
 import { instance } from "../../../utils/instance";
 import { useAuthHeader } from "react-auth-kit";
 import { useEffect, useState } from "react";
+import NoData from "../../atoms/NoData";
 
 const FinancialRecordList = () => {
   const authHeader = useAuthHeader();
@@ -48,7 +49,7 @@ const FinancialRecordList = () => {
               />
             ))
           ) : (
-            <p>Belum ada data</p>
+            <NoData />
           )}
         </div>
       </div>

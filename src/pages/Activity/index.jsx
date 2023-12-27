@@ -4,6 +4,7 @@ import Layout from "../Layout";
 import ActivityCard from "../../components/molecules/ActivityCard";
 import { useAuthHeader } from "react-auth-kit";
 import AddActivity from "../../components/molecules/Modal/AddActivity";
+import NoData from "../../components/atoms/NoData";
 
 const Activity = () => {
   const authHeader = useAuthHeader();
@@ -39,20 +40,20 @@ const Activity = () => {
               <AddActivity />
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
-            {data.length > 0 ? (
-              data.map((item) => (
+          {data.length > 0 ? (
+            data.map((item) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
                 <ActivityCard
                   title={item.title}
                   goal={item.goal}
                   key={item.id}
                   id={item.id}
                 />
-              ))
-            ) : (
-              <p>Belum ada data</p>
-            )}
-          </div>
+              </div>
+            ))
+          ) : (
+            <NoData />
+          )}
         </div>
       </div>
     </Layout>

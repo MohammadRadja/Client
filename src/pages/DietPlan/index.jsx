@@ -4,6 +4,7 @@ import { instance } from "../../utils/instance";
 import { useEffect, useState } from "react";
 import DietPlanCard from "../../components/molecules/DietPlanCard";
 import AddDietPlan from "../../components/molecules/Modal/AddDietPlan";
+import NoData from "../../components/atoms/NoData";
 
 const DietPlan = () => {
   const authHeader = useAuthHeader();
@@ -38,9 +39,9 @@ const DietPlan = () => {
               <AddDietPlan />
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
-            {data.length > 0 ? (
-              data.map((item) => (
+          {data.length > 0 ? (
+            data.map((item) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
                 <DietPlanCard
                   mealType={item.mealType}
                   calories={item.calories}
@@ -49,11 +50,11 @@ const DietPlan = () => {
                   id={item.id}
                   key={item.id}
                 />
-              ))
-            ) : (
-              <p>Belum ada data</p>
-            )}
-          </div>
+              </div>
+            ))
+          ) : (
+            <NoData />
+          )}
         </div>
       </div>
     </Layout>

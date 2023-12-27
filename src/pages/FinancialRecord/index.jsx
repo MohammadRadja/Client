@@ -4,6 +4,7 @@ import { useAuthHeader } from "react-auth-kit";
 import AddFinancialRecord from "../../components/molecules/Modal/AddFinancialRecord";
 import { instance } from "../../utils/instance";
 import { useEffect, useState } from "react";
+import NoData from "../../components/atoms/NoData";
 
 const FinanialRecord = () => {
   const authHeader = useAuthHeader();
@@ -38,9 +39,9 @@ const FinanialRecord = () => {
               <AddFinancialRecord />
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
             {data.length > 0 ? (
               data.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
                 <FinancialRecordCard
                   title={item.title}
                   description={item.description}
@@ -50,11 +51,11 @@ const FinanialRecord = () => {
                   id={item.id}
                   key={item.id}
                 />
+          </div>
               ))
             ) : (
-              <p>Belum ada data</p>
+           <NoData />
             )}
-          </div>
         </div>
       </div>
     </Layout>

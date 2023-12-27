@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ActivityCard from "../ActivityCard";
 import { instance } from "../../../utils/instance";
 import { useAuthHeader } from "react-auth-kit";
+import NoData from "../../atoms/NoData";
 
 const ActivityList = () => {
   const authHeader = useAuthHeader();
@@ -43,7 +44,7 @@ const ActivityList = () => {
               />
             ))
           ) : (
-            <p>Belum ada data</p>
+            <NoData />
           )}
         </div>
       </div>
