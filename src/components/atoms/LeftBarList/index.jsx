@@ -19,7 +19,7 @@ const LeftSidebarLink = ({ icon, text, to }) => {
   };
 
   return (
-    <Link to={to} className={`flex items-center gap-3 w-[300px] py-2 pl-1 cursor-pointer 
+    <Link to={to} className={`flex items-center gap-3 w-[300px] py-4 pl-1 cursor-pointer 
       ${isHovered ? '' : ''}`}
       style={{ color: isHovered ? 'blue' : 'inherit' }}
       onClick={handleLinkClick}

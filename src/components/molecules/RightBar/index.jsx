@@ -24,9 +24,9 @@ const RightSidebar = () => {
     <div className="fixed hidden xl:block bg-white right-0 w-[300px] py-2 px-4 h-screen overflow-y-scroll">
       <div>
         <div className="flex justify-between">
-          <h1 className="font-semibold text-gray-600 text-[18px]">Articles</h1>
+          <h1 className="font-semibold text-gray-600 text-[18px]">Health Article</h1>
           <Link to="/blog">
-          <button className="text-primary">See All</button>
+          <button className="text-primary font-semibold">See All</button>
       </Link>
         </div>
 
