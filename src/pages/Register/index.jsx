@@ -1,13 +1,16 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { instance } from '../../utils/instance';
-import toast from 'react-hot-toast';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { instance } from "../../utils/instance";
+import toast from "react-hot-toast";
+import { format } from "date-fns";
 
 const Register = () => {
   const [dataForm, setDataForm] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
+    gender: "",
+    birthdate: "",
   });
 
   const handleChange = (e) => {
@@ -20,27 +23,34 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const formattedBirthdate = format(
+        new Date(dataForm.birthdate),
+        "dd-MM-yyyy"
+      );
+
       await instance
-        .post('register', dataForm)
+        .post("register", { ...dataForm, birthdate: formattedBirthdate })
         .then(() => {
-          toast('Register Success', {
-            icon: '👏',
+          toast("Register Success", {
+            icon: "👏",
           });
         })
         .then(() => {
           setTimeout(() => {
-            window.location.href = '/login';
+            window.location.href = "/login";
           }, 2000);
         });
     } catch (error) {
-      toast(error.response.data.message, {
-        icon: '❌',
+      toast("Register Failed", {
+        icon: "❌",
       });
     } finally {
       setDataForm({
-        name: '',
-        email: '',
-        password: '',
+        name: "",
+        email: "",
+        password: "",
+        gender: "",
+        birthdate: "",
       });
     }
   };
@@ -51,8 +61,7 @@ const Register = () => {
         <Link
           to="/"
           className="flex items-center mb-6 text-6xl font-semibold text-gray-900 dark:text-white"
-        >
-        </Link>
+        ></Link>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -85,7 +94,7 @@ const Register = () => {
                   Your email
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   name="email"
                   value={dataForm.email}
                   id="email"
@@ -113,6 +122,46 @@ const Register = () => {
                   required
                 />
               </div>
+              <div>
+                <label
+                  htmlFor="gender"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Gender
+                </label>
+                <select
+                  name="gender"
+                  id="gender"
+                  value={dataForm.gender}
+                  onChange={handleChange}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                >
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  htmlFor="birthdate"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Birthdate
+                </label>
+                <input
+                  type="date"
+                  name="birthdate"
+                  id="birthdate"
+                  value={dataForm.birthdate}
+                  onChange={handleChange}
+                  placeholder="yy"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div></div>
+
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
                   <div className="flex items-center h-5">

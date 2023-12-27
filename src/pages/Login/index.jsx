@@ -21,7 +21,7 @@ const Login = () => {
               authState: res.data.data.user,
               token: res.data.data.token,
               tokenType: 'Bearer',
-              expiresIn: 3600,
+              expiresIn: 10800,
             });
           })
           .then(() => {
