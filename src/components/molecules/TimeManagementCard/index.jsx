@@ -7,7 +7,7 @@ const TimeManagementCard = ({ task, deadline, priority, id }) => {
       <div className="flex flex-col h-full">
         <h2 className="text-2xl font-bold text-gray-800 mb-auto text-center overflow-hidden ">{task}</h2>
         <span className="text-primary font-bold mb-5 mt-5 text-center uppercase ">{priority}</span>
-        <span className="text-gray-600 mb-5">
+        <span className="text-secondary  mb-5">
           Deadline  :{" "}
           {new Date(deadline).toLocaleDateString("en-GB")}
         </span>
