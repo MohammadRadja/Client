@@ -15,7 +15,7 @@ const BlogCard = ({ title, image, content, id }) => {
   return (
     <Link to={`/blog/${id}`}>
       <div className="max-w-sm mx-auto group w-[350px] h-[390px] hover:no-underline focus:no-underline bg-white border border-gray-200 rounded-lg shadow">
-        <img
+        <img  
           role="presentation"
           className="object-cover w-full rounded h-44 bg-gray-500"
           src={image}
