@@ -8,23 +8,25 @@ import { useEffect, useState } from "react";
 const FinanialRecord = () => {
   const authHeader = useAuthHeader();
   const [data, setData] = useState([]);
-  const getTimeManagements = async () => {
+  const getFinancialRecords = async () => {
     try {
-      await instance
-        .get("financialRecord", {
-          headers: {
-            Authorization: authHeader(),
-          },
-        })
-        .then((res) => {
-          setData(res.data.data);
-        });
+      const res = await instance.get("financialRecord", {
+        headers: {
+          Authorization: authHeader(),
+        },
+      });
+
+      const sortedData = res.data.data.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+
+      setData(sortedData);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    getTimeManagements();
+    getFinancialRecords();
   }, []);
   return (
     <Layout>
@@ -37,19 +39,21 @@ const FinanialRecord = () => {
             </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
-            {data.map((item) => {
-              return (
-              <FinancialRecordCard
-                title={item.title}
-                description={item.description}
-                category={item.category}
-                amount={item.amount}
-                date={item.date}
-                id={item.id}
-                key={item.id}
-              />
-              );
-            })}
+            {data.length > 0 ? (
+              data.map((item) => (
+                <FinancialRecordCard
+                  title={item.title}
+                  description={item.description}
+                  category={item.category}
+                  amount={item.amount}
+                  date={item.date}
+                  id={item.id}
+                  key={item.id}
+                />
+              ))
+            ) : (
+              <p>Belum ada data</p>
+            )}
           </div>
         </div>
       </div>

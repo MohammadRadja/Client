@@ -6,23 +6,26 @@ import { useEffect, useState } from "react";
 const FinancialRecordList = () => {
   const authHeader = useAuthHeader();
   const [data, setData] = useState([]);
-  const getTimeManagements = async () => {
+  const getFinancialRecords = async () => {
     try {
-      await instance
-        .get("financialRecord", {
-          headers: {
-            Authorization: authHeader(),
-          },
-        })
-        .then((res) => {
-          setData(res.data.data);
-        });
+      const res = await instance.get("financialRecord", {
+        headers: {
+          Authorization: authHeader(),
+        },
+      });
+
+      const sortedData = res.data.data.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+
+      setData(sortedData);
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
-    getTimeManagements();
+    getFinancialRecords();
   }, []);
   return (
     <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
@@ -31,19 +34,22 @@ const FinancialRecordList = () => {
           <div className="text-3xl font-semibold">Recent Financial Record</div>
         </div>
         <div className="relative flex gap-4 py-6 overflow-x-auto">
-          {data.map((item) => {
-            return (
+          {data.length > 0 ? (
+            data.map((item) => (
               <FinancialRecordCard
                 title={item.title}
                 description={item.description}
                 category={item.category}
                 amount={item.amount}
                 date={item.date}
+                createdAt={item.createdAt}
                 id={item.id}
                 key={item.id}
               />
-            );
-          })}
+            ))
+          ) : (
+            <p>Belum ada data</p>
+          )}
         </div>
       </div>
     </div>

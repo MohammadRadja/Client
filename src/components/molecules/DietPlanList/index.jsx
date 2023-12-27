@@ -6,24 +6,29 @@ import { useEffect, useState } from "react";
 const DietPlanList = () => {
   const authHeader = useAuthHeader();
   const [data, setData] = useState([]);
-  const getTimeManagements = async () => {
+
+  const getDietPlans = async () => {
     try {
-      await instance
-        .get("dietPlan", {
-          headers: {
-            Authorization: authHeader(),
-          },
-        })
-        .then((res) => {
-          setData(res.data.data);
-        });
+      const res = await instance.get("dietPlan", {
+        headers: {
+          Authorization: authHeader(),
+        },
+      });
+
+      const sortedData = res.data.data.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+
+      setData(sortedData);
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
-    getTimeManagements();
+    getDietPlans();
   }, []);
+
   return (
     <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
       <div className="px-4 py-5 bg-white rounded-[17px] shadow-md">
@@ -31,8 +36,8 @@ const DietPlanList = () => {
           <div className="text-3xl font-semibold">Recent Diet Plan</div>
         </div>
         <div className="relative flex gap-4 py-6 overflow-x-auto">
-          {data.map((item) => {
-            return (
+          {data.length > 0 ? (
+            data.map((item) => (
               <DietPlanCard
                 mealType={item.mealType}
                 foodItem={item.foodItem}
@@ -41,8 +46,10 @@ const DietPlanList = () => {
                 id={item.id}
                 key={item.id}
               />
-            );
-          })}
+            ))
+          ) : (
+            <p>Belum ada data</p>
+          )}
         </div>
       </div>
     </div>

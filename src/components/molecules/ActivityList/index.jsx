@@ -8,15 +8,16 @@ const ActivityList = () => {
   const [data, setData] = useState([]);
   const getActivitys = async () => {
     try {
-      await instance
-        .get("activity", {
-          headers: {
-            Authorization: authHeader(),
-          },
-        })
-        .then((res) => {
-          setData(res.data.data);
-        });
+      const res = await instance.get("activity", {
+        headers: {
+          Authorization: authHeader(),
+        },
+      });
+      const sortedData = res.data.data.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+
+      setData(sortedData);
     } catch (error) {
       console.log(error);
     }
@@ -32,16 +33,18 @@ const ActivityList = () => {
           <div className="text-3xl font-semibold">Recent Activity</div>
         </div>
         <div className="relative flex gap-4 py-6 overflow-x-auto">
-          {data.map((item) => {
-            return (
+          {data.length > 0 ? (
+            data.map((item) => (
               <ActivityCard
                 key={item.id}
                 title={item.title}
                 goal={item.goal}
                 id={item.id}
               />
-            );
-          })}
+            ))
+          ) : (
+            <p>Belum ada data</p>
+          )}
         </div>
       </div>
     </div>

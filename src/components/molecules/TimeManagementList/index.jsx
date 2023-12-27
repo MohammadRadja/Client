@@ -8,15 +8,17 @@ const TimeManagementList = () => {
   const [data, setData] = useState([]);
   const getTimeManagements = async () => {
     try {
-      await instance
-        .get("timeManagement", {
-          headers: {
-            Authorization: authHeader(),
-          },
-        })
-        .then((res) => {
-          setData(res.data.data);
-        });
+      const res = await instance.get("timeManagement", {
+        headers: {
+          Authorization: authHeader(),
+        },
+      });
+
+      const sortedData = res.data.data.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+
+      setData(sortedData);
     } catch (error) {
       console.log(error);
     }
@@ -31,17 +33,20 @@ const TimeManagementList = () => {
           <div className="text-3xl font-semibold">Recent Time Management</div>
         </div>
         <div className="relative flex gap-4 py-6 overflow-x-auto">
-          {data.map((item) => {
-            return (
+          {data.length > 0 ? (
+            data.map((item) => (
               <TimeManagementCard
                 task={item.task}
                 deadline={item.deadline}
                 priority={item.priority}
+                createdAt={item.createdAt}
                 id={item.id}
                 key={item.id}
               />
-            );
-          })}
+            ))
+          ) : (
+            <p>Belum ada data</p>
+          )}
         </div>
       </div>
     </div>
