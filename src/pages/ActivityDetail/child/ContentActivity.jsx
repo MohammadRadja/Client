@@ -210,14 +210,6 @@ const ContentActivity = ({ data }) => {
           </form>
         </div>
       </Modal>
-
-      {/* </div>
-      <p className="font-bold">
-        Written by {data.author?.name}{" "}
-        <span className="ms-10 font-normal text-slate-400">Monday May 20</span>
-      </p>
-      <hr />
-      <p>{data.content}</p> */}
     </div>
   );
 };
