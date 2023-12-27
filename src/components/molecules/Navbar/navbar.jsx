@@ -4,6 +4,7 @@ import { GiWeightLiftingUp } from "react-icons/gi";
 import { useSignOut } from "react-auth-kit";
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect} from "react";
+import { BsNewspaper } from "react-icons/bs";
 
 const Navbar = () => {
   const signOut = useSignOut();
@@ -130,6 +131,19 @@ const Navbar = () => {
               Diet Plan
             </Link>
             <Link
+              to="/blog"
+              onClick={() => {
+                toggleMenu(); // Tutup menu saat tautan diklik
+                handleLinkClick('blog'); // Set selectedIcon ke 'dietPlan'
+              }}
+              onMouseEnter={() => setIsHovered('blog')}
+              onMouseLeave={() => setIsHovered('')}
+              className={`block px-4 py-2 transition duration-300 cursor pointer
+              ${isHovered === 'blog' || selectedIcon === 'blog' ? 'bg-primary' : ''}`}
+              >
+              Health Article
+            </Link>
+            <Link
               to="/home"
               onClick={() => {
                 signOut();
@@ -179,6 +193,12 @@ const Navbar = () => {
           <GiWeightLiftingUp
             style={{ borderBottom: selectedIcon === 'dietPlan' ? '3px solid blue' : 'none' }}
             onClick={() => handleIconClick('dietPlan')}
+          />
+        </Link>
+        <Link to="/blog">
+          <BsNewspaper 
+            style={{ borderBottom: selectedIcon === 'blog' ? '3px solid blue' : 'none' }}
+            onClick={() => handleIconClick('blog')}
           />
         </Link>
       </div>
