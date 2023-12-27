@@ -34,7 +34,7 @@ const ContentTimeManagement = ({ data }) => {
           }, 500);
         });
     } catch (error) {
-      toast(error.response.data.message, {
+      toast("Delete Failed", {
         icon: "❌",
       });
     } finally {
@@ -76,7 +76,7 @@ const ContentTimeManagement = ({ data }) => {
             }, 500);
           });
       } catch (error) {
-        toast(error.response.data.message, {
+        toast("Update Failed", {
           icon: "❌",
           console: error,
         });
@@ -137,7 +137,7 @@ const ContentTimeManagement = ({ data }) => {
       >
         <div className="mt-2">
           <p className="text-sm text-gray-500">
-          Are you sure you want to delete this post?
+            Are you sure you want to delete this?
           </p>
         </div>
         <div className="mt-4 flex gap-3">
@@ -165,7 +165,7 @@ const ContentTimeManagement = ({ data }) => {
         isOpen={updateModal}
       >
         <div className="mt-2">
-          <form onSubmit={formik.handleSubmit} className="  mx-auto">
+          <form onSubmit={formik.handleSubmit} className=" mx-auto">
             <div className="mb-5">
               <label
                 htmlFor="task"
@@ -180,7 +180,7 @@ const ContentTimeManagement = ({ data }) => {
                 name="task"
                 id="task"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Type product name"
+                placeholder="Type Task"
                 required
               />
             </div>
@@ -198,11 +198,11 @@ const ContentTimeManagement = ({ data }) => {
                 name="priority"
                 id="priority"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Type product name"
+                placeholder="Type Priority"
                 required
               />
             </div>
-         
+
             <div className="mb-5">
               <label
                 htmlFor="deadline"
@@ -233,7 +233,7 @@ const ContentTimeManagement = ({ data }) => {
                 onClick={() => setUpdateModal(!updateModal)}
                 className="inline-flex justify-center rounded-md border border-transparent bg-red-500 text-white px-4 py-2 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
               >
-                Batal
+                Cancel
               </button>
             </div>
           </form>

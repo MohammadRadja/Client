@@ -32,7 +32,7 @@ const ContentActivity = ({ data }) => {
           }, 500);
         });
     } catch (error) {
-      toast(error.response.data.message, {
+      toast("Delete Failed", {
         icon: "❌",
       });
     } finally {
@@ -66,7 +66,7 @@ const ContentActivity = ({ data }) => {
             }, 500);
           });
       } catch (error) {
-        toast(error.response.data.message, {
+        toast("Update Failed", {
           icon: "❌",
         });
       } finally {
@@ -134,7 +134,7 @@ const ContentActivity = ({ data }) => {
       >
         <div className="mt-2">
           <p className="text-sm text-gray-500">
-          Are you sure you want to delete this post?
+          Are you sure you want to delete this?
           </p>
         </div>
         <div className="mt-4 flex gap-3">
@@ -157,7 +157,7 @@ const ContentActivity = ({ data }) => {
 
       {/* UPDATE */}
       <Modal
-        title={`Update Blog ${data.mealType}`}
+        title={`Update ${data.mealType}`}
         handleModal={() => setUpdateModal(!updateModal)}
         isOpen={updateModal}
       >
@@ -177,7 +177,7 @@ const ContentActivity = ({ data }) => {
                 type="text"
                 id="mealType"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Title"
+                placeholder="Type Title"
                 required
               />
             </div>
@@ -213,7 +213,7 @@ const ContentActivity = ({ data }) => {
                 name="calories"
                 value={formik.values.calories}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Type Food Item"
+                placeholder="Type Total Calories"
                 required
               />
             </div>
