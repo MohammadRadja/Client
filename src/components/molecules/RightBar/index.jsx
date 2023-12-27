@@ -1,6 +1,3 @@
-import { RiVideoAddFill } from "react-icons/ri";
-import { BiSearch, BiEdit } from "react-icons/bi";
-import { BsThreeDots } from "react-icons/bs";
 import { instance } from "../../../utils/instance";
 import Article from "../Article";
 import { useState, useEffect } from "react";
@@ -24,35 +21,24 @@ const RightSidebar = () => {
     <div className="fixed hidden xl:block bg-white right-0 w-[300px] py-2 px-4 h-screen overflow-y-scroll">
       <div>
         <div className="flex justify-between">
-          <h1 className="font-semibold text-gray-600 text-[18px]">Health Article</h1>
+          <h1 className="font-semibold text-gray-600 text-[18px]">
+            Health Article
+          </h1>
           <Link to="/blog">
-          <button className="text-primary font-semibold">See All</button>
-      </Link>
+            <button className="text-primary font-semibold">See All</button>
+          </Link>
         </div>
-
         <div className="mt-4">
-            {data.map((item) => {
-              return (
-                <Article
-                  title={item.title}
-                  content={item.content}
-                  id={item.id}
-                  key={item.id}
-                />
+          {data.map((item) => {
+            return (
+              <Article
+                title={item.title}
+                content={item.content}
+                id={item.id}
+                key={item.id}
+              />
             );
           })}
-
-
-          {/* <div className="flex items-center justify-between">
-            <h1 className="font-semibold text-gray-600 text-[18px]">
-              Recomended
-            </h1>
-            <div className="flex gap-4">
-              <RiVideoAddFill className="text-gray-600" />
-              <BiSearch />
-              <BsThreeDots />
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

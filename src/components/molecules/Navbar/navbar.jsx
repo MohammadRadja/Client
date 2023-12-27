@@ -1,7 +1,3 @@
-// import React from "react";
-// import { BsMessenger } from "react-icons/bs";
-// import { IoNotifications } from "react-icons/io5";
-// import { CgMenuGridO } from "react-icons/cg";
 import { IoMdLogOut } from "react-icons/io";
 import { BiHomeSmile, BiListCheck, BiTime, BiMoney} from "react-icons/bi";
 import { GiWeightLiftingUp } from "react-icons/gi";
@@ -152,7 +148,7 @@ const Navbar = () => {
 
 
       {/* Navbar Center */}
-      <div className="hidden lg:flex items-center justify-center gap-[50px] text-[30px] text-gray-500">
+      <div className="hidden lg:flex items-center justify-center gap-[50px] text-[30px] text-secondary">
       <Link to='/home'>
         <BiHomeSmile
             style={selectedIcon === 'home' ? { borderBottom: '3px solid blue' } : {}}
