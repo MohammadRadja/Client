@@ -53,7 +53,9 @@ const DietPlan = () => {
               </div>
             ))
           ) : (
-            <NoData />
+            <div className="col-span-2 flex items-center justify-center">
+              <NoData />
+            </div>
           )}
         </div>
       </div>

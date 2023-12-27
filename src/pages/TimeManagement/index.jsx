@@ -39,9 +39,9 @@ const TimeManagement = () => {
               <AddTimeManagement />
             </button>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
             {data.length > 0 ? (
               data.map((item) => (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-items-center">
                 <TimeManagementCard
                   task={item.task}
                   deadline={item.deadline}
@@ -49,11 +49,13 @@ const TimeManagement = () => {
                   key={item.id}
                   id={item.id}
                 />
-          </div>
               ))
             ) : (
-              <NoData />
+              <div className="col-span-2 flex items-center justify-center">
+                <NoData />
+              </div>
             )}
+          </div>
         </div>
       </div>
     </Layout>
