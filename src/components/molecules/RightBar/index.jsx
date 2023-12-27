@@ -29,7 +29,7 @@ const RightSidebar = () => {
   return (
     <div className="fixed hidden xl:block bg-white right-0 w-[300px] py-2 px-4 h-screen overflow-y-scroll">
       <div>
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-4">
           <h1 className="font-semibold text-secondary text-[18px]">
             Health Article
           </h1>
@@ -37,7 +37,7 @@ const RightSidebar = () => {
             <button className="text-primary font-semibold">See All</button>
           </Link>
         </div>
-        <div className="mt-4">
+        <div className="mt-2">
           {data.map((item) => (
             <Article
               title={item.title}

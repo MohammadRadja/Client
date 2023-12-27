@@ -14,7 +14,7 @@ const Article = ({ title, content, id }) => {
   return (
     <Link
       to={`/blog/${id}`}
-      className="flex gap-4 mb-5 border-b border-gray-300 pb-2"
+      className="flex gap-4 mb-4 border-b border-gray-300 pb-2"
     >
       <div className="flex gap-2 w-[100%]">
         <div>

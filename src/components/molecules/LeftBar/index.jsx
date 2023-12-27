@@ -10,9 +10,9 @@ const LeftSidebar = () => {
   return (
     <div className="fixed hidden lg:block bg-white w-[300px] py-2 px-4 h-screen">
       <div className="flex flex-col text-secondary gap-2 mt-4">
-        <p className="font-semibold text-lg mt-2 mb-2">
-          Halooo!!,
-          <span className="font-bold text-primary mb-2"> {user().name}</span>
+        <p className="font-semibold text-lg mb-2">
+          Haloo!!!<br/> 
+          <span className="font-bold text-primary mb-2">{user().name}</span>
         </p>
         <LeftSidebarLink icon={<BiHomeSmile />} text="Home" to="/home" />
         <LeftSidebarLink
