@@ -21,7 +21,7 @@ const DietPlanCard = ({
         <span className="text-tertiary mb-2">
           Consumption Date : {new Date(createdAt).toLocaleDateString("en-GB")}
         </span>
-        <p className="text-tertiary mb-2">Total Calories : {calories}</p>
+        <p className="text-tertiary mb-2">Total Calories : {calories} kkal</p>
         <p className="mb-3 font-normal text-tertiary dark:text-gray-400 overflow-hidden h-full">
           {description}
         </p>

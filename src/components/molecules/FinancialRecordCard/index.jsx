@@ -26,6 +26,9 @@ const FinancialRecordCard = ({
         <span className="text-primary uppercase font-bold mb-5 text-center">
           {category}
         </span>
+        <p className="text-secondary mb-2">
+        Total Spending : $ {amount},00
+        </p>
         <span className="text-secondary mb-2">
           Expense Date : {new Date(date).toLocaleDateString("en-GB")}
         </span>

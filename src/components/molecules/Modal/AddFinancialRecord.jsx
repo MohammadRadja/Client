@@ -146,7 +146,7 @@ const AddFinancialRecord = () => {
                       htmlFor="amount"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Jumlah Pengeluaran
+                      Total Spending
                     </label>
                     <input
                       onChange={formik.handleChange}
@@ -164,7 +164,7 @@ const AddFinancialRecord = () => {
                       htmlFor="date"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Tanggal Pengeluaran
+                      Expense Date
                     </label>
                     <input
                       onChange={formik.handleChange}
