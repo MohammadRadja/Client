@@ -75,17 +75,17 @@ const ContentBlog = ({ data }) => {
             className="absolute rounded-lg left-0 top-0 w-full h-full z-0 object-cover"
             alt="background"
           />
-          <div className="p-4 absolute bottom-0 left-0 z-20">
+          {/* <div className="p-4 absolute bottom-0 left-0 z-20">
             <h2 className="text-3xl font-semibold text-gray-100 leading-tight">
               {data.title}
             </h2>
-          </div>
+          </div> */}
         </div>
 
         <div className="px-4 lg:px-0 mt-6 text-gray-700 max-w-screen-md mx-auto text-justify text-lg leading-relaxed">
-          <p className="pb-6">{data.content}</p>
-    
+          <p className="pb-6 whitespace-normal">{data.content}</p>
         </div>
+
       </div>
     </div>
   );
