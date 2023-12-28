@@ -88,8 +88,8 @@ const ContentActivity = ({ data }) => {
     <div className="max-w-2xl px-6 py-4 mx-auto space-y-6">
       <article className="space-y-8 text-gray-900">
         <div className="space-y-6">
-          <h1 className="text-3xl font-bold md:tracki md:text-5xl text-center">
-            {data.mealType}
+          <h1 className="text-2xl font-bold md:tracki md:text-5xl text-center">
+            {data.foodItem}
           </h1>
           <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
             <div className="flex items-center md:space-x-2">
@@ -107,7 +107,7 @@ const ContentActivity = ({ data }) => {
       <div>
         <div className="flex flex-wrap justify-center py-2 gap-2 border-t border-dashed border-gray-600">
           <span className="text-primary font-bold mb-1 uppercase">
-            {data.foodItem}
+            {data.mealType}
           </span>
         </div>
         <div className="flex items-center space-x-4 mt-10">
@@ -134,7 +134,7 @@ const ContentActivity = ({ data }) => {
       >
         <div className="mt-2">
           <p className="text-sm text-gray-500">
-          Are you sure you want to delete this?
+            Are you sure you want to delete this?
           </p>
         </div>
         <div className="mt-4 flex gap-3">
