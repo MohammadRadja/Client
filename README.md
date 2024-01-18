@@ -23,6 +23,6 @@ HealthyApps is a collaborative effort aimed at promoting well-being by offering 
    npm install
 4. **Run the Application:**
    ```bash
-   npm start
+   npm run dev
 5. **Explore and Customize:**
 6. **Contribute and Share:**
