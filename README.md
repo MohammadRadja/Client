@@ -12,12 +12,13 @@ HealthyApps is a collaborative effort aimed at promoting well-being by offering 
 
 ### How to Get Started
 1. **Clone the Repository:**
+   ```bash
    git clone https://github.com/MohammadRadja/Client
-2. **Navigate to the Project Directory:**
+3. **Navigate to the Project Directory:**
    cd Client
-3. **Install Dependencies:**
+4. **Install Dependencies:**
    npm install
-4. **Run the Application:**
+5. **Run the Application:**
    npm start
-5. **Explore and Customize:**
-6. **Contribute and Share:**
+6. **Explore and Customize:**
+7. **Contribute and Share:**
