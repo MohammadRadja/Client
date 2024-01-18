@@ -7,6 +7,7 @@ HealthyApps is a collaborative effort aimed at promoting well-being by offering 
 ## Built With
 - React.js
 - Tailwind CSS
+- Axios
 
 
 
