@@ -15,10 +15,13 @@ HealthyApps is a collaborative effort aimed at promoting well-being by offering 
    ```bash
    git clone https://github.com/MohammadRadja/Client
 3. **Navigate to the Project Directory:**
+   ```bash
    cd Client
-4. **Install Dependencies:**
+5. **Install Dependencies:**
+   ```bash
    npm install
-5. **Run the Application:**
+7. **Run the Application:**
+   ```bash
    npm start
-6. **Explore and Customize:**
-7. **Contribute and Share:**
+9. **Explore and Customize:**
+10. **Contribute and Share:**
