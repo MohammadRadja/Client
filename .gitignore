@@ -7,8 +7,12 @@
 # pnpm-debug.log*
 # lerna-debug.log*
 
-# .env
+.env
 node_modules
+index.html
+main
+package-lock.json
+vercel.json
 # dist
 # dist-ssr
 # *.local
@@ -23,3 +27,4 @@ node_modules
 # *.njsproj
 # *.sln
 # *.sw?
+
